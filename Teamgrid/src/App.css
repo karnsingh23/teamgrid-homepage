@@ -18,3 +18,18 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: "PayPal Open";
+  src: url("/fonts/PayPalOpen-Medium.woff2") format("woff2"),
+       url("/fonts/PayPalOpen-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PayPal Open";
+  src: url("/fonts/PayPalOpen-Light.woff2") format("woff2"),
+       url("/fonts/PayPalOpen-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+

@@ -67,134 +67,138 @@ const capabilities = [
 
 const CapabilitiesSection = () => {
   return (
+    <Box sx={{ width: "100%", bgcolor: "#0c3b74", color: "white" }}>
+  <Box
+    sx={{
+      px: { xs: 2, md: 12 },
+      py: { xs: 6, md: 10 },
+      maxWidth: "1700px",
+      margin: "0 auto",
+    }}
+  >
+    {/* Heading & Button Row */}
     <Box
       sx={{
-        px: { xs: 2, md: 12 },
-        py: { xs: 6, md: 10 },
-        bgcolor: "#0c3b74",
-        color: "white",
-        maxWidth: "1700px",
-        margin: "0 auto",
+        display: "flex",
+        flexDirection: { xs: "column", sm: "row" },
+        alignItems: { xs: "flex-start", sm: "center" },
+        justifyContent: "space-between",
+        gap: 2,
+        mb: 6,
       }}
     >
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" }, // Stack on mobile
-          alignItems: { xs: "flex-start", sm: "center" },
-          justifyContent: "space-between",
-          gap: 2,
-          mb: 6,
+          m: { xs: "0 auto", md: 0 },
+          textAlign: { xs: "center", md: "left" },
         }}
       >
-        <Box
-          sx={{
-            m: { xs: "0 auto", md: 0 },
-            textAlign: { xs: "center", md: "left" },
-          }}
+        <Typography
+          fontSize={{ xs: "28px", sm: "32px", md: "40px", lg:"56px" }}
+          fontWeight="500"
         >
-          <Typography
-            fontSize={{ xs: "28px", sm: "32px", md: "40px" }}
-            fontWeight="bold"
-          >
-            Our Capabilities
-          </Typography>
-          <Typography variant="subtitle1" fontSize={{ xs: "14px", sm: "16px" }}>
-            Modern Technologies & Collaborative Tools
-          </Typography>
-        </Box>
-
-        <Button
-          variant="contained"
-          color="primary"
-          sx={{
-            m: { xs: "0 auto", md: 0 },
-            px: { xs: 3, sm: 4 },
-            py: 1.5,
-            borderRadius: "50px",
-            textTransform: "none",
-            fontSize: { xs: "14px", sm: "16px" },
-            alignSelf: { xs: "flex-start", sm: "center" }, 
-            whiteSpace: "nowrap",
-          }}
-        >
-          Get a Quote →
-        </Button>
+          Our Capabilities
+        </Typography>
+        <Typography variant="subtitle1" fontSize={{ xs: "14px", sm: "16px",md:"18px" }}>
+          Modern Technologies & Collaborative Tools
+        </Typography>
       </Box>
 
-      <Grid container spacing={3} justifyContent="space-between">
-        {capabilities.map((cap, index) => (
-          <Grid
-            key={index}
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            sx={{ m: { xs: "0 auto", md: 0 } }}
+      <Button
+        variant="contained"
+        color="primary"
+        sx={{
+          m: { xs: "0 auto", md: 0 },
+          px: { xs: 3, sm: 4,md:5 },
+          py: 1.5,
+          borderRadius: "50px",
+          textTransform: "none",
+          fontSize: { xs: "14px", sm: "16px" },
+          fontWeight:400,
+          alignSelf: { xs: "flex-start", sm: "center" },
+          whiteSpace: "nowrap",
+        }}
+      >
+        Get a Quote →
+      </Button>
+    </Box>
+
+    {/* Grid of Capabilities */}
+    <Grid container spacing={3} justifyContent="space-between">
+      {capabilities.map((cap, index) => (
+        <Grid
+          key={index}
+          item
+          xs={12}
+          sm={6}
+          md={4}
+          sx={{ m: { xs: "0 auto", md: 0 } }}
+        >
+          <Card
+            sx={{
+              bgcolor: "transparent",
+              color: "white",
+              height: "100%",
+              borderRadius: "24px",
+              width: "100%",
+              maxWidth: { xs: 320, sm: 360, md: 370, lg: 390 },
+              border: "1px solid rgb(7, 82, 161)",
+              m: "0 auto",
+              "&:hover": {
+                bgcolor: "#003272",
+                border: "1px solid #003272",
+                cursor: "pointer",
+              },
+            }}
           >
-            <Card
+            <CardContent
               sx={{
-                bgcolor: "transparent",
-                color: "white",
-                height: "100%",
-                borderRadius: "24px",
-                width: "100%",
-                maxWidth: { xs: 320, sm: 360, md: 370, lg: 390 },
-                border: "1px solid rgb(7, 82, 161)",
-                m: "0 auto",
-                "&:hover": {
-                  bgcolor: "#003272",
-                  border: "1px solid #003272",
-                  cursor: "pointer",
-                },
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                textAlign: "left",
               }}
             >
-              <CardContent
+              <Box
                 sx={{
                   display: "flex",
-                  flexDirection: "row", 
-                  alignItems: "center",
-                  textAlign: "left",
+                  // alignItems: "center",
+                  justifyContent: "center",
+                  mr: 2,
+                  bgcolor: "#1B5093",
+                  p: 1,
+                  borderRadius: 4,
                 }}
               >
                 <Box
+                  component="img"
+                  src={cap.icon}
+                  alt={cap.name}
                   sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    mr: 2,
-                    bgcolor: "#1B5093",
-                    p: 1,
-                    borderRadius: 4,
+                    width: { xs: 30, md: 40 },
+                    height: { xs: 30, md: 40 },
+                    objectFit: "contain",
                   }}
-                >
-                  <Box
-                    component="img"
-                    src={cap.icon}
-                    alt={cap.name}
-                    sx={{
-                      width: { xs: 30, md: 40 },
-                      height: { xs: 30, md: 40 },
-                      objectFit: "contain",
-                    }}
-                  />
-                </Box>
+                />
+              </Box>
 
-                <Box>
-                  <Typography variant="h6">{cap.name}</Typography>
-                  <Typography
-                    color="#E3EFFF"
-                    sx={{ fontSize: { xs: "12px", md: "13px" } }}
-                  >
-                    {cap.desc}
-                  </Typography>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+              <Box>
+                <Typography fontSize="20px" fontWeight={500}>{cap.name}</Typography>
+                <Typography
+                  color="#E3EFFF"
+                  sx={{ fontSize: { xs: "12px", md: "13px",lg:"14px" },mt:0.5 }}
+                >
+                  {cap.desc}
+                </Typography>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+  </Box>
+</Box>
+
   );
 };
 

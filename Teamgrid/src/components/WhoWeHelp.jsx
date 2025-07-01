@@ -48,23 +48,23 @@ const WhoWeHelp = () => {
 
         <Box sx={{ maxWidth: 500 }}>
           <Typography
-            fontSize={{ xs: "28px", sm: "34px", md: "40px" }}
-            fontWeight={700}
+            fontSize={{ xs: "28px", sm: "34px", md: "40px",lg:'56px' }}
+            fontWeight={500}
             mb={1}
           >
             Who We Help
           </Typography>
           <Typography
-            sx={{ fontSize: "16px" }}
-            variant="subtitle1"
+            sx={{ fontSize: "18px" }}
+            // variant="subtitle1"
             color="#000"
             mb={2}
           >
             A Trusted Partner for Growing Teams
           </Typography>
           <Typography
-            fontSize={{ xs: "15px", sm: "16px", md: "17px" }}
-            variant="body1"
+            fontSize={{ xs: "15px", sm: "16px", md: "16px" }}
+            // variant="body1"
             color="#000"
             mb={5}
           >
@@ -74,8 +74,11 @@ const WhoWeHelp = () => {
           </Typography>
           <Button
             variant="contained"
+            fontWeight={400}
             sx={{
-              fontSize: { xs: "15px", sm: "20px", md: "1.1rem" },
+              fontSize: { xs: "15px", sm: "17px", md: "18px" },
+              fontWeight: 400,
+              color:'#FAFAFA',
               borderRadius: "50px",
               backgroundColor: "#05408E",
               textTransform: "none",

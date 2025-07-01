@@ -60,13 +60,13 @@ const WhyTeamgrid = () => {
       >
         <Grid item xs={12} md={8}>
           <Typography
-            fontSize={{ xs: "28px", sm: "34px", md: "40px" }}
-            fontWeight="bold"
+            fontSize={{ xs: "28px", sm: "34px", md: "40px",lg:"56px" }}
+            fontWeight={500}
           >
             Why Teamgrid
           </Typography>
           <Typography
-            fontSize={{ xs: "15px", sm: "16px", md: "17px" }}
+            fontSize={{ xs: "15px", sm: "16px", md: "17px",lg:"18px" }}
             color="#000"
           >
             Flexible Talent. Reliable Delivery. Scalable Results.
@@ -86,7 +86,8 @@ const WhyTeamgrid = () => {
             sx={{
               borderRadius: "50px",
               textTransform: "none",
-              fontSize: { xs: "15px", sm: "20px", md: "1.1rem" },
+              fontSize: { xs: "15px", sm: "17px", md: "18px" },
+              fontWeight:400,
               color: "#000",
               px: { xs: 3, sm: 3.5, md: 4 },
               py: { xs: 1, sm: 1.2, md: 1.5 },
@@ -139,13 +140,14 @@ const WhyTeamgrid = () => {
                       sx={{
                         color: "#05408E",
                         fontSize: { xs: "17px", md: "20px" },
+                        fontWeight:500
                       }}
                     >
                       {feature.title}
                     </Typography>
                   }
                   secondary={
-                    <Typography variant="body2" color="#000">
+                    <Typography fontWeight={400} fontSize="16px" color="#000">
                       {feature.description}
                     </Typography>
                   }

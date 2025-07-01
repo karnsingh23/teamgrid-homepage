@@ -7,10 +7,12 @@ import CapabilitiesSection from '../components/CapabilitiesSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import LetsTalk from '../components/Letstalk'
 import FooterSection from '../components/FooterSection'
+import Navbar from '../components/Navbar'
 
 function Homepage() {
   return (
     <>
+    <Navbar/>
     <Animated/>
     <WhoWeHelp/>
     <WhatWeDo/>

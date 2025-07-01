@@ -92,8 +92,8 @@ const WhatWeDo = () => {
       }}
     >
       <Typography
-        fontSize={{ xs: "28px", sm: "34px", md: "40px" }}
-        fontWeight="bold"
+        fontSize={{ xs: "28px", sm: "34px", md: "40px", lg: "56px" }}
+        fontWeight="500"
         mb={2}
       >
         What We Do
@@ -102,7 +102,7 @@ const WhatWeDo = () => {
         color="#000"
         mb={6}
         sx={{ width: "100%" }}
-        fontSize={{ xs: "15px", sm: "16px", md: "17px" }}
+        fontSize={{ xs: "15px", sm: "16px", md: "17px", lg: "18px" }}
       >
         We build AI-powered web and mobile apps with innovative design and
         scalable development. Our team delivers seamless UI/UX and solutions to
@@ -139,8 +139,8 @@ const WhatWeDo = () => {
         >
           <Box>
             <Typography
-              fontSize={{ xs: "20px", sm: "25px", md: "30px" }}
-              fontWeight={700}
+              fontSize={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
+              fontWeight={500}
               mb={2}
             >
               {title}
@@ -171,7 +171,7 @@ const WhatWeDo = () => {
             </Button>
           </Box>
 
-          <Box sx={{ mb: isMobile ? 0 : 15 }}>
+          <Box sx={{ mb: isMobile ? 0 : 10 }}>
             <IconButton
               onClick={handlePrev}
               sx={{
@@ -195,7 +195,7 @@ const WhatWeDo = () => {
         <Box
           sx={{
             width: { xs: "100%", md: "50%" },
-            mr: { xs: 0, md: 10 },
+            mr: { xs: 0, md: 5 },
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -224,10 +224,9 @@ const WhatWeDo = () => {
         {/* Tabs */}
         <Box
           sx={{
+            display: "flex",
+            justifyContent: "center",
             width: "100%",
-            px: { xs: 2, md: 5 },
-            pb: { xs: 2, md: 0 },
-            order: 3,
             position: { xs: "relative", md: "absolute" },
             bottom: { xs: "auto", md: "24px" },
             left: { xs: "auto", md: "50%" },
@@ -238,7 +237,7 @@ const WhatWeDo = () => {
         >
           <Box
             sx={{
-              width: "100%",
+              width: { xs: "100%", md: "98%" },
               display: "grid",
               gridTemplateColumns: {
                 xs: "repeat(3, 1fr)",
@@ -252,12 +251,10 @@ const WhatWeDo = () => {
               backdropFilter: "blur(156.9px)",
               backgroundColor: "rgba(255, 255, 255, 0.6)",
               border: "1px solid rgba(255, 255, 255, 0.3)",
-              maxWidth: { md: "90%", lg: "95%" },
-              margin: "0 auto",
             }}
           >
             {categories.map((cat, index) => (
-              <Box key={index} sx={{ position: "relative", px: 0.5 }}>
+              <Box key={index} sx={{ position: "relative",  }}>
                 <Button
                   fullWidth
                   onClick={() => handleTabClick(index)}
@@ -284,10 +281,17 @@ const WhatWeDo = () => {
                     },
                   }}
                 >
-                  <Typography fontSize={{ xs: 12, sm: 14 }} fontWeight={600}>
+                  <Typography
+                    fontSize={{ xs: 12, sm: 13, lg: 14 }}
+                    fontWeight={500}
+                  >
                     {cat.title}
                   </Typography>
-                  <Typography variant="caption" fontSize={{ xs: 10.5, sm: 12 }}>
+                  <Typography
+                    color={index === activeIndex ? "#fff" : "#0724498C"}
+                    fontSize={{ xs: 10.5, sm: 12, lg: 13 }}
+                    fontWeight={400}
+                  >
                     {cat.subtitle}
                   </Typography>
                 </Button>

@@ -13,11 +13,13 @@ import { LuSend } from "react-icons/lu";
 
 const FooterSection = () => {
   return (
-    <Box
+    <Box sx={{width:'100%',bgcolor: "#072449"}}>
+
+      <Box
       sx={{
         maxWidth: "1700px",
         margin: "0 auto",
-        bgcolor: "#072449",
+        
         color: "white",
         px: { xs: 3, md: 12 },
         py: { xs: 6, md: 10 },
@@ -35,24 +37,25 @@ const FooterSection = () => {
           <Box
             sx={{
               display: "flex",
+              maxWidth:"382px",
               flexDirection: "column",
               alignItems: { xs: "center", md: "flex-start" },
             }}
           >
-            <Typography variant="subtitle1" fontWeight={600} gutterBottom>
+            <Typography variant="subtitle1" fontSize="20px" fontWeight={500} gutterBottom>
               Blogs
             </Typography>
-            <Link href="#" underline="none" color="#A8B6C5" mb={2}>
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
               How AI Is Transforming Web & Mobile App Development in 2025
             </Link>
-            <Link href="#" underline="none" color="#A8B6C5" mb={2}>
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
               Choosing the Right Tech Stack for Scalable Product Development
             </Link>
-            <Link href="#" underline="none" color="#A8B6C5" mb={2}>
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
               Design Smarter: Why UI/UX Matters More Than Ever in AI-Powered
               Apps
             </Link>
-            <Link href="#" underline="none" color="#A8B6C5">
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5">
               Fixed-Cost vs. Dedicated Teams: What Works Best for Your Next
               Project?
             </Link>
@@ -68,7 +71,7 @@ const FooterSection = () => {
               alignItems: { xs: "center", md: "flex-start" },
             }}
           >
-            <Typography variant="subtitle1" fontWeight={600} gutterBottom>
+            <Typography variant="subtitle1" fontSize="20px" fontWeight={500} gutterBottom>
               Quick Links
             </Typography>
             {[
@@ -79,7 +82,7 @@ const FooterSection = () => {
               "How We Work",
               "Let’s Talk",
             ].map((text, i) => (
-              <Link key={i} href="#" underline="none" color="#A8B6C5" mb={2}>
+              <Link key={i} href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
                 {text}
               </Link>
             ))}
@@ -95,7 +98,7 @@ const FooterSection = () => {
               alignItems: { xs: "center", md: "flex-start" },
             }}
           >
-            <Typography variant="subtitle1" fontWeight={600} gutterBottom>
+            <Typography variant="subtitle1" fontSize="20px" fontWeight={500} gutterBottom>
               Services
             </Typography>
             {[
@@ -106,7 +109,7 @@ const FooterSection = () => {
               "E-commerce",
               "WordPress & Shopify",
             ].map((text, i) => (
-              <Link key={i} href="#" underline="none" color="#A8B6C5" mb={2}>
+              <Link key={i} href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
                 {text}
               </Link>
             ))}
@@ -122,7 +125,7 @@ const FooterSection = () => {
               alignItems: { xs: "center", md: "flex-start" },
             }}
           >
-            <Typography variant="subtitle1" fontWeight={600} gutterBottom>
+            <Typography variant="subtitle1" fontSize="20px" fontWeight={500} gutterBottom>
               Policies
             </Typography>
             {[
@@ -130,7 +133,7 @@ const FooterSection = () => {
               "Privacy Policy",
               "NDA Available on Request",
             ].map((text, i) => (
-              <Link key={i} href="#" underline="none" color="#A8B6C5" mb={2}>
+              <Link key={i} href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
                 {text}
               </Link>
             ))}
@@ -151,17 +154,17 @@ const FooterSection = () => {
           {/* Contact Info */}
           <Grid item xs={12} md={6}>
             <Box sx={{ maxWidth: 488, mx: "auto" }}>
-              <Typography fontWeight={600} gutterBottom>
+              <Typography fontWeight={500} fontSize="20px" gutterBottom>
                 Need Assistance? Call Us!
               </Typography>
-              <Typography color="#b0bfd0" mb={2}>
+              <Typography color="#b0bfd0" fontSize="16px" mb={2}>
                 Our experts are here to help. Contact us for personalised
                 guidance or any queries about your project or digital solution.
               </Typography>
-              <Typography fontWeight={600} mb={0.5}>
+              <Typography fontWeight={500} fontSize="20px" mb={0.5}>
                 +91 - 98304 42666
               </Typography>
-              <Typography color="#b0bfd0">
+              <Typography fontSize="16px" color="#b0bfd0">
                 Mail us at info@teamgrid.com
               </Typography>
             </Box>
@@ -170,10 +173,10 @@ const FooterSection = () => {
           {/* Newsletter */}
           <Grid item xs={12} md={6}>
             <Box sx={{ maxWidth: 588, mx: "auto" }}>
-              <Typography fontWeight={600} gutterBottom>
+              <Typography fontWeight={500} fontSize="20px" gutterBottom>
                 Stay Connected with Our Newsletter
               </Typography>
-              <Typography color="#b0bfd0" mb={2}>
+              <Typography color="#b0bfd0" fontSize="16px" mb={2}>
                 Stay updated with expert insights, smart development tips, and
                 exclusive Teamgrid news—delivered straight to your inbox.
               </Typography>
@@ -227,13 +230,14 @@ const FooterSection = () => {
           textAlign: { xs: "center", md: "left" },
         }}
       >
-        <Typography sx={{ mb: 5, mt: 3 }}>
+        <Typography fontSize="16px" sx={{ mb: 5, mt: 3 }}>
           <strong>Disclaimer:</strong> Content and services on this site are for
           general information only and may change. Teamgrid is not liable for
           outcomes influenced by third-party tools or evolving technologies.
         </Typography>
-        <Typography>© 2025 Teamgrid. All rights reserved.</Typography>
+        <Typography fontSize="16px">© 2025 Teamgrid. All rights reserved.</Typography>
       </Box>
+    </Box>
     </Box>
   );
 };

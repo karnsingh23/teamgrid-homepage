@@ -71,25 +71,25 @@ const TestimonialCard = ({ quote, name, title, avatar }) => {
         <Typography
           variant="body2"
           mt={1}
-          fontSize={{ xs: "13.5px", sm: "15px" }}
+          fontSize={{ xs: "13.5px", sm: "15px",md:"16px" }}
         >
           {quote}
         </Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center", mt: 3 }}>
-        <Avatar src={avatar} alt={name} sx={{ width: 36, height: 36, mr: 2 }} />
+        <Avatar src={avatar} alt={name} sx={{ width: 53, height: 53, mr: 2 }} />
         <Box>
           <Typography
             variant="subtitle2"
             fontWeight={600}
-            fontSize={{ xs: "13px", sm: "14px" }}
+            fontSize={{ xs: "13px", sm: "14px" ,md:"16px"}}
           >
             {name}
           </Typography>
           <Typography
             variant="caption"
             color="text.secondary"
-            fontSize={{ xs: "11px", sm: "12px" }}
+            fontSize={{ xs: "11px", sm: "12px",md:"14px" }}
           >
             {title}
           </Typography>
@@ -104,25 +104,27 @@ const TestimonialsSection = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
+    
     <Box
       sx={{
         px: { xs: 0, sm: 0, md: 0 },
         py: { xs: 6, sm: 10 },
         bgcolor: "#fff",
         textAlign: "center",
-        maxWidth: "1700px",
+        // maxWidth: "1700px",
         margin: "0 auto",
       }}
     >
       <Typography
-        fontSize={{ xs: "28px", sm: "34px", md: "40px" }}
-        fontWeight={700}
+        fontSize={{ xs: "28px", sm: "34px", md: "40px",lg:"56px" }}
+        fontWeight={500}
         mb={1}
       >
         What Our Clients Say
       </Typography>
       <Typography
-        fontSize={{ xs: "14px", sm: "16px", md: "17px" }}
+        fontSize={{ xs: "14px", sm: "16px", md: "17px" ,lg:"18px"}}
+        
         color="#140E13"
         mb={6}
       >
@@ -156,7 +158,8 @@ const TestimonialsSection = () => {
             py: 1.5,
             borderRadius: 999,
             borderColor: "#CACACA",
-            fontSize: { xs: "14px", sm: "16px" },
+            fontSize: { xs: "14px", sm: "16px",md:"18px" },
+            fontWeight:400,
             textTransform: "none",
             color: "#140E13",
           }}
