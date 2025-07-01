@@ -104,58 +104,64 @@ const WhyTeamgrid = () => {
       {/* Content Row */}
       <Grid
         container
-        spacing={6}
+        spacing={2}
         alignItems="flex-start"
         direction={{ xs: "column", md: "row" }}
       >
         {/* Image (Left side) */}
-        <Grid item xs={12} md={3}>
-          <Box
-            component="img"
-            src={teamImage}
-            alt="Team collaboration"
-            sx={{
-              width: "100%",
-              height: "auto",
-              borderRadius: 3,
-            }}
-          />
-        </Grid>
+        <Grid item xs={12} md={4} lg={3.5}>
+  <Box
+    component="img"
+    src={teamImage}
+    alt="Team collaboration"
+    sx={{
+      width: { xs: "100%", md: "100%", lg: "90%" },  // Reduce width at lg
+      height: "auto",
+      borderRadius: 3,
+    }}
+  />
+</Grid>
+
 
         {/* Feature List (Right side) */}
-        <Grid item xs={12} md={8} sx={{ ml: { xs: 0, md: 4 } }}>
-          <List disablePadding>
-            {features.map((feature, index) => (
-              <ListItem
-                key={index}
-                disableGutters
-                sx={{ alignItems: "flex-start", mb: { xs: "0", md: 2 } }}
-              >
-                <ListItemIcon sx={{ minWidth: 32, mt: 2.2, mr: 1 }}>
-                  <img src={tickSign} alt="tick" />
-                </ListItemIcon>
-                <ListItemText
-                  primary={
-                    <Typography
-                      sx={{
-                        color: "#05408E",
-                        fontSize: { xs: "17px", md: "20px" },
-                        fontWeight:500
-                      }}
-                    >
-                      {feature.title}
-                    </Typography>
-                  }
-                  secondary={
-                    <Typography fontWeight={400} fontSize="16px" color="#000">
-                      {feature.description}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Grid>
+        <Grid item xs={12} md={8} lg={8.5}>
+  <List disablePadding>
+    {features.map((feature, index) => (
+      <ListItem
+        key={index}
+        disableGutters
+        sx={{ alignItems: "flex-start", mb: { xs: 1, md: 2 } }}
+      >
+        <ListItemIcon sx={{ minWidth: 32, mt: 2, mr: 1 }}>
+          <img src={tickSign} alt="tick" />
+        </ListItemIcon>
+        <ListItemText
+          primary={
+            <Typography
+              sx={{
+                color: "#05408E",
+                fontSize: { xs: "16px", sm: "18px", md: "19px", lg: "20px" },
+                fontWeight: 500,
+              }}
+            >
+              {feature.title}
+            </Typography>
+          }
+          secondary={
+            <Typography
+              fontWeight={400}
+              fontSize={{ xs: "14px", sm: "15px", md: "16px" }}
+              color="#000"
+            >
+              {feature.description}
+            </Typography>
+          }
+        />
+      </ListItem>
+    ))}
+  </List>
+</Grid>
+
       </Grid>
     </Box>
   );

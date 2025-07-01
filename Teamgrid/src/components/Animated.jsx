@@ -319,9 +319,7 @@ const Animated = () => {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
+
 
 
 
@@ -344,9 +342,6 @@ const Animated = () => {
               overflow: "hidden",
             }}
           >
-            {/* from here navbar is starting */}
-
-            
 
             {/* from here the animation is starting */}
 
@@ -468,6 +463,7 @@ const Animated = () => {
                       px: 4,
                       py: 1.5,
                       borderRadius: "999px",
+                      bgcolor:'#072449',
                       fontSize: "1rem",
                       fontWeight:400,
                       borderColor: "rgba(255, 255, 255, 0.2)",
