@@ -137,39 +137,47 @@ const WhatWeDo = () => {
             order: { xs: 2, md: 1 },
           }}
         >
-          <Box>
-            <Typography
-              fontSize={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
-              fontWeight={500}
-              mb={2}
-            >
-              {title}
-            </Typography>
-            <Typography
-              fontSize={{ xs: "14px", sm: "15px", md: "16px" }}
-              color="#000"
-              mb={4}
-            >
-              {description}
-            </Typography>
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "30px",
-                textTransform: "none",
-                borderColor: "#A8BDD3",
-                fontSize: { xs: "14px", sm: "15px", md: "16px" },
-                color: "#000",
-                px: 3,
-                mb: { xs: 4, md: 0 },
-                "&:hover": {
-                  borderColor: "#A8BDD3",
-                },
-              }}
-            >
-              Explore Our Portfolio →
-            </Button>
-          </Box>
+<Box sx={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+  <Box>
+    <Typography
+      fontSize={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
+      fontWeight={500}
+      mb={2}
+    >
+      {title}
+    </Typography>
+    <Typography
+      fontSize={{ xs: "14px", sm: "15px", md: "16px" }}
+      color="#000"
+      mb={4}
+    >
+      {description}
+    </Typography>
+  </Box>
+
+  <Box>
+    <Button
+      variant="outlined"
+      sx={{
+        borderRadius: "30px",
+        textTransform: "none",
+        borderColor: "#A8BDD3",
+        fontSize: { xs: "14px", sm: "15px", md: "16px" },
+        fontWeight: 500,
+        color: "#000",
+        mb:3,
+        px: 4,
+        py: 1.5,
+        "&:hover": {
+          borderColor: "#A8BDD3",
+        },
+      }}
+    >
+      Explore Our Portfolio →
+    </Button>
+  </Box>
+</Box>
+
 
           <Box sx={{ mb: isMobile ? 0 : 10 }}>
             <IconButton
@@ -177,14 +185,15 @@ const WhatWeDo = () => {
               sx={{
                 bgcolor: "#fff",
                 mr: 1,
-                fontSize: { xs: "20px", md: "30px" },
+                p:1.5,
+                fontSize: { xs: "20px", md: "25px" },
               }}
             >
               <BsArrowLeft color="#000" />
             </IconButton>
             <IconButton
               onClick={handleNext}
-              sx={{ bgcolor: "#fff", fontSize: { xs: "20px", md: "30px" } }}
+              sx={{ bgcolor: "#fff",p:1.5, fontSize: { xs: "20px", md: "25px" } }}
             >
               <GoArrowRight color="#000" />
             </IconButton>
