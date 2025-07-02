@@ -167,7 +167,7 @@ function Navbar() {
               width: "100%", // full screen
               background: scrolled
                 ? "#001B38"
-                : "linear-gradient(to bottom, rgba(0, 6, 14, 0.56),rgba(1, 24, 54, 0.16))",
+                : "linear-gradient(to bottom, rgba(0, 6, 14, 0.8),rgba(1, 24, 54, 0.16))",
               transition: "background-color 0.3s ease",
               color: "white",
               minHeight: { xs: "60px", md: "80px" },
@@ -265,7 +265,7 @@ function Navbar() {
                           { name: "offset", options: { offset: [0, 8] } },
                         ]}
                         sx={{
-                          mt: 12,
+                          mt: 11,
                           width: "100%",
                           display: "flex",
                           alignItems: "center",

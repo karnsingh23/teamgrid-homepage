@@ -362,8 +362,6 @@ const Animated = () => {
                   left: 0,
                   width: "100%",
                   height: "40px",
-                  background:
-                    "linear-gradient(to bottom, transparent, rgba(6, 29, 59, 1))",
                   zIndex: 5,
                   pointerEvents: "none",
                 },
