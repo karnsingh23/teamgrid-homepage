@@ -6,7 +6,7 @@ import theme from "./components/theme";
 import Homepage from './pages/Homepage';
 import Navbar from './components/Navbar';
 import FooterSection from './components/FooterSection';
-import Frontend from './pages/Frontend';
+
 
 function App() {
 
@@ -16,7 +16,6 @@ function App() {
       <CssBaseline />
       <Navbar/>
       <Homepage/>
-      {/* <Frontend/> */}
       <FooterSection/>
       </ThemeProvider>
     </>
