@@ -25,17 +25,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Logo from "../assets/Logo.png";
-import img1 from "../assets/Group-25.png";
-import img2 from "../assets/Group-26.png";
-import img3 from "../assets/Group-28.png";
-import img4 from "../assets/Group-29.png";
-import img5 from "../assets/Group-30.png";
-import img6 from "../assets/Group-31.png";
-import img7 from "../assets/Group-33.png";
-import img8 from "../assets/Group-34.png";
-import img9 from "../assets/Group-35.png";
-import img10 from "../assets/Group-36.png";
-import img11 from "../assets/Group-37.png";
+import darkLogo from "../assets/Logo2.png";
+import img1 from "../assets/i1.png";
+import img2 from "../assets/i2.png";
+import img3 from "../assets/i3.png";
+import img4 from "../assets/i4.png";
+import img5 from "../assets/i5.png";
+import img6 from "../assets/i6.png";
+import img7 from "../assets/i7.png";
+import img8 from "../assets/i8.png";
+import img9 from "../assets/i9.png";
+import img10 from "../assets/i10.png";
+import img11 from "../assets/i11.png";
 
 function Navbar() {
   const theme = useTheme();
@@ -166,8 +167,8 @@ function Navbar() {
             sx={{
               width: "100%", // full screen
               background: scrolled
-                ? "#001B38"
-                : "linear-gradient(to bottom, rgba(0, 6, 14, 0.8),rgba(1, 24, 54, 0.16))",
+                ? "#fff"
+                : "linear-gradient(to bottom, #000E1F,#05234A00)",
               transition: "background-color 0.3s ease",
               color: "white",
               minHeight: { xs: "60px", md: "80px" },
@@ -187,7 +188,7 @@ function Navbar() {
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <img
-                  src={Logo}
+                  src={scrolled?darkLogo:Logo}
                   alt="Logo"
                   style={{
                     width: isMobile ? 130 : 160,
@@ -203,7 +204,7 @@ function Navbar() {
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Button
                       sx={{
-                        color: "white",
+                        color: scrolled?"#0B3C7B": "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
@@ -215,7 +216,7 @@ function Navbar() {
                     </Button>
                     <Button
                       sx={{
-                        color: "white",
+                        color: scrolled?"#0B3C7B": "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
@@ -237,7 +238,7 @@ function Navbar() {
                           fontSize: "16px",
                           px: 2,
                           gap: 1,
-                          color: "white",
+                          color: scrolled?"#0B3C7B": "#fff",
                           fontWeight: "medium",
                           "&:hover": { bgcolor: "#3082EC3B" },
                         }}
@@ -278,7 +279,7 @@ function Navbar() {
                           onMouseLeave={handlePopoverClose}
                           sx={{
                             p: 3,
-                            borderRadius: 5,
+                            borderRadius: '24px',
                             boxShadow: 3,
                             width: "90vw",
                             backgroundColor: "background.paper",
@@ -309,15 +310,20 @@ function Navbar() {
                                       mb: 1,
                                       borderRadius: 2,
                                       "&:hover": {
-                                        backgroundColor: "#f0f4ff",
+                                        backgroundColor: "#F3F3F6",
+                                        "& .icons":{
+                                          bgcolor:'#fff'
+                                        }
                                       },
                                     }}
                                   >
                                     <Box
+                                    className="icons"
                                       component="img"
                                       src={service.icon}
                                       alt={service.name}
-                                      sx={{ width: 40, height: 40, mr: 2 }}
+                                      sx={{ width: 37, height: 40, mr: 2, p:1, borderRadius:'8px',color:'#05408E'}}
+                                      bgcolor='#F3F3F6'
                                     />
                                     <Box>
                                       <Typography
@@ -347,7 +353,7 @@ function Navbar() {
 
                     <Button
                       sx={{
-                        color: "white",
+                        color: scrolled?"#0B3C7B": "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
@@ -359,7 +365,7 @@ function Navbar() {
                     </Button>
                     <Button
                       sx={{
-                        color: "white",
+                        color: scrolled?"#0B3C7B": "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,

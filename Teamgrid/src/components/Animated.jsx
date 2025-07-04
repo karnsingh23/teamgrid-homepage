@@ -1,44 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { startTransition } from "react";
-import { FaAngleDown } from "react-icons/fa6";
 import {
   Box,
   Typography,
   IconButton,
-  AppBar,
-  Toolbar,
   Button,
-  List,
-  ListItem,
-  ListItemText,
   useTheme,
   useMediaQuery,
-  Popper,
-  Paper,
-  Grid,
-  Collapse,
-  Divider,
-  Drawer,
 } from "@mui/material";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import CloseIcon from "@mui/icons-material/Close";
-import MenuIcon from "@mui/icons-material/Menu";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import ExpandMore from "@mui/icons-material/ExpandMore";
-import Logo from "../assets/Logo.png";
-import img1 from "../assets/Group-25.png";
-import img2 from "../assets/Group-26.png";
-import img3 from "../assets/Group-28.png";
-import img4 from "../assets/Group-29.png";
-import img5 from "../assets/Group-30.png";
-import img6 from "../assets/Group-31.png";
-import img7 from "../assets/Group-33.png";
-import img8 from "../assets/Group-34.png";
-import img9 from "../assets/Group-35.png";
-import img10 from "../assets/Group-36.png";
-import img11 from "../assets/Group-37.png";
-import logo from "../assets/sun.png";
+import logo from "../assets/sun.svg";
 import react from "../assets/react-2.png";
 import wordpress from "../assets/W.png";
 import shopify from "../assets/shopify.png";
@@ -280,7 +252,7 @@ const Animated = () => {
                     startTransition(() => {
                       setSelectedTool(tool);
                       setLogoZoomed(true);
-                      setLogoVisible(true);
+                      // setLogoVisible(true);
                     });
 
                     setTimeout(() => {
@@ -320,9 +292,6 @@ const Animated = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-
-
-
   return (
     <>
       <Box sx={{ width: "100%", bgcolor: "#072449" }}>
@@ -337,12 +306,12 @@ const Animated = () => {
           <Box
             sx={{
               position: "relative",
+               maxHeight:'800px',
               width: "100%",
               height: "100vh",
               overflow: "hidden",
             }}
           >
-
             {/* from here the animation is starting */}
 
             <Box
@@ -371,9 +340,10 @@ const Animated = () => {
 
               <Box
                 sx={{
+                  maxHeight:'800px',
                   position: "relative",
                   left: { xs: 0, md: "100px" },
-                  maxWidth: { xs: "90%", md: 750,lg:850 },
+                  maxWidth: { xs: "90%", md: 750, lg: 850 },
                   color: "white",
                   mt: "80px",
                   mx: { xs: "auto", md: 0 },
@@ -399,7 +369,7 @@ const Animated = () => {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: { xs: "36px", md: "54px",lg:"64px" },
+                    fontSize: { xs: "36px", md: "54px", lg: "64px" },
                     fontWeight: "700",
                     mb: 2,
                     lineHeight: 1.2,
@@ -416,8 +386,8 @@ const Animated = () => {
                     mb: 4,
                     color: "#E1E0E0",
                     zIndex: 2,
-                    fontSize: { xs: "16px", md: "17px",lg:"20px" },
-                    fontWeight:300
+                    fontSize: { xs: "16px", md: "17px", lg: "20px" },
+                    fontWeight: 300,
                   }}
                 >
                   We help agencies and startups scale smarter — with dedicated
@@ -442,7 +412,7 @@ const Animated = () => {
                       py: 1.5,
                       borderRadius: "999px",
                       fontSize: "1rem",
-                      fontWeight:400,
+                      fontWeight: 400,
                       textTransform: "none",
                       zIndex: 2,
                       "&:hover": {
@@ -461,9 +431,9 @@ const Animated = () => {
                       px: 4,
                       py: 1.5,
                       borderRadius: "999px",
-                      bgcolor:'#072449',
+                      bgcolor: "#072449",
                       fontSize: "1rem",
-                      fontWeight:400,
+                      fontWeight: 400,
                       borderColor: "rgba(255, 255, 255, 0.2)",
                       zIndex: 2,
                       textTransform: "none",
@@ -490,6 +460,7 @@ const Animated = () => {
                   height: { xs: 240, md: 800 },
                   zIndex: 1,
                   opacity: { xs: 0.4, md: 1 },
+                  overflow: "visible",
                 }}
               >
                 <Box
@@ -499,6 +470,7 @@ const Animated = () => {
                     left: 0,
                     width: "100%",
                     height: "100%",
+                    overflow:'visible'
                   }}
                 >
                   {orbitTriplets.map((triplet, index) =>
@@ -516,57 +488,79 @@ const Animated = () => {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
-                    width: { xs: 60, md: 180,lg:245 },
-                    height: { xs: 60, md: 180 ,lg:245},
+                    width: { xs: 60, md: 180, lg: 245 },
+                    height: { xs: 60, md: 180, lg: 245 },
                     zIndex: 5,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
-                  {/* Background rings */}
+                  {/* Define the keyframes once at the parent level */}
+                  <style>
+                    {`
+    @keyframes continuousRipple {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+      }
+    }
+    `}
+                  </style>
+
+                  {/* First ripple - starts immediately */}
                   <Box
                     sx={{
                       position: "absolute",
                       top: "50%",
                       left: "50%",
-                      width: { xs: 120, md: 340,lg:481 },
-                      height: { xs: 120, md: 340, lg:481 },
+                      width: { xs: 120, md: 340, lg: 350 },
+                      height: { xs: 120, md: 340, lg: 350 },
                       borderRadius: "50%",
                       backgroundColor: "#0A2B55",
-                      transform: "translate(-50%, -50%)",
-                      animation: "pulse 5s infinite ease-out",
-                      "@keyframes pulse": {
-                        "0%": {
-                          transform: "translate(-50%, -50%) scale(1)",
-                          opacity: 0.8,
-                        },
-                        "50%": {
-                          transform: "translate(-50%, -50%) scale(1.09)",
-                          opacity: 0.4,
-                        },
-                        "100%": {
-                          transform: "translate(-50%, -50%) scale(1)",
-                          opacity: 0.9,
-                        },
-                      },
+                      transform: "translate(-50%, -50%) scale(1)",
+                      animation: "continuousRipple 4s infinite 0.5s",
                     }}
                   />
 
-                  {/* Middle ripple circle - lighter blue */}
+                  {/* Second ripple - starts after 1s */}
                   <Box
                     sx={{
                       position: "absolute",
                       top: "50%",
                       left: "50%",
-                      width: { xs: 100, md: 260,lg:363 },
-                      height: { xs: 100, md: 260, lg:363 },
+                      width: { xs: 120, md: 340, lg: 300 },
+                      height: { xs: 120, md: 340, lg: 300 },
                       borderRadius: "50%",
                       backgroundColor: "#0B3161",
-                      transform: "translate(-50%, -50%)",
-                      animation: "pulse 5s infinite ease-out 0.5s",
+                      transform: "translate(-50%, -50%) scale(1)",
+                      animation: "continuousRipple 4s infinite 1.5s",
                     }}
                   />
+
+                  {/* Third ripple - starts after 2s */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      width: { xs: 120, md: 340, lg: 250 },
+                      height: { xs: 120, md: 340, lg: 250 },
+                      borderRadius: "50%",
+                      backgroundColor: "#0D3A72",
+                      transform: "translate(-50%, -50%) scale(1)",
+                      animation: "continuousRipple 4s infinite 2.5s",
+                    }}
+                  />
+
+                  {/* Central circle with logo */}
                   <Box
                     sx={{
                       width: "100%",
@@ -576,7 +570,6 @@ const Animated = () => {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      // boxShadow: "0 0 20px rgba(88, 154, 247, 0.5)",
                       cursor: "pointer",
                       position: "relative",
                       overflow: "visible",
@@ -591,13 +584,15 @@ const Animated = () => {
                         height: "65%",
                         maxWidth: "65%",
                         objectFit: "contain",
+                        position: "absolute",
+                        right: "50%", // Start from center
                         transform: logoZoomed
-                          ? "scale(20) translateX(2.5vw) translateY(35%)"
-                          : "scale(1)",
+                          ? "scale(20) translateX(90%) translateY(33%)" // Move right while scaling
+                          : "translateX(50%) scale(1)", // Center normally
+                        transformOrigin: "right center", // Zoom from right side
                         transition:
-                          "transform 0.5s ease-in-out, opacity 0.2s ease-in-out",
+                          "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                         zIndex: logoZoomed ? 1300 : 2,
-                        position: "relative",
                         opacity: logoVisible ? 1 : 0,
                         visibility: logoVisible ? "visible" : "hidden",
                       }}
