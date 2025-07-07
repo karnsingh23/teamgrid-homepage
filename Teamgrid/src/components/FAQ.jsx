@@ -46,11 +46,11 @@ const FAQ = () => {
         px: { xs: 2, sm: 4 },
         py: { xs: 4, sm: 8 },
         backgroundColor: '#F3F8FF',
-        minHeight: '100vh',
         textAlign: 'center',
+        // maxHeight:'674px'
       }}
     >
-      <Box sx={{ width: { xs: '100%', sm: '477px' }, m: '0 auto' }}>
+      <Box sx={{ width: { xs: '100%', sm: '477px' }, m: '0 auto' ,maxWidth:'1700px'}}>
         <Typography fontSize={{ xs: '32px', sm: '48px' }} fontWeight="500">
           Got Questions
         </Typography>

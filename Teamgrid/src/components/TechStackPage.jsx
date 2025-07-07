@@ -34,7 +34,7 @@ const TechStackPage = () => {
   const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ px: { xs: 2, md: 12 }, py: { xs: 5, md: 8 } }}>
+    <Box sx={{ px: { xs: 2, md: 12 }, py: { xs: 5, md: 8 },maxWidth:'1700px',m:'0 auto' }}>
       <Box
         sx={{
           display: 'flex',

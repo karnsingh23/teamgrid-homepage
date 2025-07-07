@@ -166,48 +166,16 @@ const services = [
 
 function Frontend() {
 
-  const angleRef = useRef([0, 0, 0, 0]);
+  const angleRef = useRef([0, -10, -50]);
 
   const orbitRefs = useRef([]);
-  const animationRef = useRef();
   const initialAngles = useRef(
-    Array(4)
+    Array(3)
       .fill()
-      .map(() => Math.random() * 360)
+      .map(() => 10)
   );
 
-  // useEffect(() => {
-  //   if (!isHoveringOrbit) {
-  //     cancelAnimationFrame(animationRef.current);
-  //     return;
-  //   }
-
-  //   const speeds = [0.02, 0.015, 0.01, 0.007];
-  //   let lastTime = performance.now();
-
-  //   const animate = (time) => {
-  //     const delta = time - lastTime;
-  //     lastTime = time;
-
-  //     angleRef.current = angleRef.current.map(
-  //       (angle, i) =>
-  //         angle + ((i % 2 === 0 ? speeds[i] : -speeds[i]) * delta) / 16
-  //     );
-
-  //     // Apply transform to each orbit div directly
-  //     orbitRefs.current.forEach((orbitEl, i) => {
-  //       if (orbitEl) {
-  //         orbitEl.style.transform = `translate(-50%, -50%) rotate(${angleRef.current[i]}deg)`;
-  //       }
-  //     });
-
-  //     animationRef.current = requestAnimationFrame(animate);
-  //   };
-
-  //   animationRef.current = requestAnimationFrame(animate);
-  //   return () => cancelAnimationFrame(animationRef.current);
-  // }, [isHoveringOrbit]);
-
+  
   const renderOrbit = (toolsPair, radius, orbitIndex) => {
     const currentAngle = angleRef.current[orbitIndex];
 
@@ -219,7 +187,7 @@ function Frontend() {
 
     const dotAngles = iconAngles.map((angle, i) => {
       const nextIndex = (i + 1) % iconAngles.length;
-      return (angle + iconAngles[nextIndex]) / 2;
+      return (angle + iconAngles[nextIndex])*8;
     });
 
     return (
@@ -253,8 +221,8 @@ function Frontend() {
                 radius * Math.cos((angle * Math.PI) / 180)
               }px)`,
               transform: "translate(-50%, -50%)",
-              width: 20,
-              height: 20,
+              width: {xs:6,md:20},
+              height: {xs:6,md:20},
               borderRadius: "50%",
               backgroundColor: "rgba(255, 255, 255, 0.85)",
               boxShadow: "0 0 3px rgba(75, 145, 241, 0.5)",
@@ -285,11 +253,10 @@ function Frontend() {
               }}
             >
               <Box
-                onMouseEnter={() => setIsHoveringOrbit(true)}
-                onMouseLeave={() => setIsHoveringOrbit(false)}
+               
                 sx={{
-                  width: { xs: 40, md: 190 },
-                  height: { xs: 40, md: 190 },
+                  width: { xs: 40, md: 190 ,lg:214},
+                  height: { xs: 40, md: 190,lg:214 },
                   borderRadius: "50%",
                   backgroundColor: "#0d264f",
                   border: "2px solid rgba(206, 198, 198, 0.3)",
@@ -305,23 +272,9 @@ function Frontend() {
                 }}
               >
                 <IconButton
-                  onClick={() => {
-                    startTransition(() => {
-                      setSelectedTool(tool);
-                      setLogoZoomed(true);
-                      setLogoVisible(true);
-                    });
-
-                    setTimeout(() => {
-                      startTransition(() => {
-                        setLogoVisible(false);
-                        setShowModal(true);
-                      });
-                    }, 300);
-                  }}
                   sx={{
-                    width: { xs: 24, md: 120 },
-                    height: { xs: 24, md: 120 },
+                    width: { xs: 24, md: 120,lg:140 },
+                    height: { xs: 24, md: 120,lg:140 },
                     borderRadius: "50%",
                     padding: 0,
                     backgroundColor: "transparent",
@@ -383,6 +336,7 @@ function Frontend() {
           <Box
             sx={{
               position: "relative",
+              maxHeight:'800px',
               width: "100%",
               height: "100vh",
               overflow: "hidden",
@@ -545,7 +499,7 @@ function Frontend() {
                   {orbitTriplets.map((triplet, index) =>
                     renderOrbit(
                       triplet,
-                      isMobile ? 130 + index * 100 : 400 + index * 200,
+                      isMobile ? 130 + index * 100 : 300 + index * 250,
                       index
                     )
                   )}
@@ -558,13 +512,15 @@ function Frontend() {
 
                   {/* what we offer */}
 
-      <Box sx={{ pl: { xs: 2, md: 12 }, py: { xs: 6, md: 10 },overflowX: "hidden"  }}>
+      <Box sx={{maxWidth:'1700px',m:'0 auto'}}>
+        <Box sx={{ pl: { xs: 2, md: 12 }, py: { xs: 6, md: 10 },overflowX: "hidden" , }}>
   <Box
     sx={{
       display: "flex",
       flexDirection: { xs: "column", md: "row" },
       gap: { xs: 4, md: 8 },
       alignItems: "flex-start",
+      
     }}
   >
     {/* Left Side: Text Content */}
@@ -765,6 +721,7 @@ function Frontend() {
     </Box>
   </Box>
 </Box>
+      </Box>
 
       <TechStackPage />
       <WhyPartner />

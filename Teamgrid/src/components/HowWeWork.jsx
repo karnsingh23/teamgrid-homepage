@@ -98,7 +98,7 @@ const StepCard = ({ id, title, description }) => (
 
 const HowWeWork = () => {
   return (
-    <Box sx={{ px: { xs: 0, md: 12 }, py: 6 }}>
+    <Box sx={{ px: { xs: 0, md: 12 }, py: 6 ,maxWidth:'1700px',m:'0 auto'}}>
   <Box
     sx={{
       backgroundColor: '#0B3C7B',

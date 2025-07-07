@@ -48,7 +48,7 @@ const EngagementModels = () => {
       px: { xs: 2, md: 12}, 
       py: 8, 
       backgroundColor: "#fff",
-      maxWidth: '1800px',
+      maxWidth: '1700px',
       mx: 'auto'
     }}>
       {/* Header Section */}

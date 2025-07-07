@@ -102,13 +102,33 @@ const tools = [
     info: "Material UI is a React UI framework based on Google's Material Design.",
     icon: mui,
   },
+  {
+    name: "Material UI",
+    info: "Material UI is a React UI framework based on Google's Material Design.",
+    icon: mui,
+  },
+  {
+    name: "GitHub",
+    info: "GitHub is a code hosting platform for collaboration.",
+    icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
+  },
+  {
+    name: "MongoDB",
+    info: "MongoDB is a NoSQL document database.",
+    icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png",
+  },
+  {
+    name: "PostgreSQL",
+    info: "PostgreSQL is an advanced open-source database.",
+    icon: postgresql,
+  },
 ];
 
 const orbitTriplets = [
-  [tools[0], tools[1], tools[2]],
-  [tools[3], tools[4], tools[5]],
-  [tools[6], tools[7], tools[8]],
-  [tools[9], tools[10], tools[11]],
+  [tools[0], tools[1], tools[2],tools[3],],
+  [ tools[4], tools[5] ,tools[6], tools[7],],
+  [ tools[8],tools[9], tools[10], tools[11],tools[12],tools[13],],
+  [ tools[14], tools[15],tools[16],tools[17],tools[18],tools[19],],
 ];
 
 const Animated = () => {
@@ -367,10 +387,10 @@ const Animated = () => {
                   color: "white",
                   mt: "80px",
                   mx: { xs: "auto", md: 0 },
-                  textAlign: { xs: "center", md: "left" },
+                  textAlign: { xs: "left", md: "left" },
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: { xs: "center", md: "flex-start" },
+                  alignItems: { xs: "flex-start", md: "flex-start" },
                   pointerEvents: "none",
                 }}
               >
@@ -421,6 +441,7 @@ const Animated = () => {
                     gap: 2,
                     flexWrap: "wrap",
                     justifyContent: { xs: "center", md: "flex-start" },
+                    width: { xs: "100%", md: "auto" },
                   }}
                 >
                   <Button
@@ -435,6 +456,7 @@ const Animated = () => {
                       fontWeight: 400,
                       textTransform: "none",
                       zIndex: 2,
+                      width: { xs: "100%", md: "auto" },
                       "&:hover": {
                         backgroundColor: "#0059C7",
                       },
@@ -456,6 +478,7 @@ const Animated = () => {
                       fontWeight: 400,
                       borderColor: "rgba(255, 255, 255, 0.2)",
                       zIndex: 2,
+                      width: { xs: "100%", md: "auto" },
                       textTransform: "none",
                       "&:hover": {
                         backgroundColor: "rgba(255, 255, 255, 0.1)",

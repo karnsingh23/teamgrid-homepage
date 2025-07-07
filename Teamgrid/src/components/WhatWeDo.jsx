@@ -133,11 +133,11 @@ const WhatWeDo = () => {
             flexDirection: "column",
             justifyContent: "space-between",
             width: { xs: "100%", md: "50%" },
-            minHeight: { xs: "350px", md: "auto" },
+            minHeight: { xs: "280px", md: "auto" },
             order: { xs: 2, md: 1 },
           }}
         >
-<Box sx={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+<Box sx={{ flex: {xs:0,md:1}, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
   <Box>
     <Typography
       fontSize={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
@@ -159,7 +159,7 @@ const WhatWeDo = () => {
     <Button
       variant="outlined"
       sx={{
-        borderRadius: "30px",
+        borderRadius: "16px",
         textTransform: "none",
         borderColor: "#A8BDD3",
         fontSize: { xs: "14px", sm: "15px", md: "16px" },
@@ -179,7 +179,8 @@ const WhatWeDo = () => {
 </Box>
 
 
-          <Box sx={{ mb: isMobile ? 0 : 10 }}>
+          {!isMobile && (
+            <Box sx={{ mb: 10 }}>
             <IconButton
               onClick={handlePrev}
               sx={{
@@ -198,6 +199,7 @@ const WhatWeDo = () => {
               <GoArrowRight color="#000" />
             </IconButton>
           </Box>
+          )}
         </Box>
 
         {/* Right Image */}
@@ -210,8 +212,8 @@ const WhatWeDo = () => {
             justifyContent: "center",
             overflow: "hidden",
             position: "relative",
-            order: { xs: 1, md: 2 },
-            height: { xs: "300px", md: "100%" },
+            order: { xs: 2, md: 2 },
+            height: { xs: "500px", md: "100%" },
           }}
         >
           <Box
@@ -236,9 +238,9 @@ const WhatWeDo = () => {
             display: "flex",
             justifyContent: "center",
             width: "100%",
-            position: { xs: "relative", md: "absolute" },
-            bottom: { xs: "auto", md: "24px" },
-            left: { xs: "auto", md: "50%" },
+            position: { xs: "absolute", md: "absolute" },
+            bottom: { xs: "5px", md: "24px" },
+            left: { xs: "0%", md: "50%" },
             transform: { xs: "none", md: "translateX(-50%)" },
             mt: { xs: 2, md: 0 },
             zIndex: 5,

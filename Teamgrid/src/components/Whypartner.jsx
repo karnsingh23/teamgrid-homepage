@@ -56,7 +56,9 @@ const WhyPartner = () => {
     <Box sx={{ 
       px: { xs: 2, md: 12 }, // Exactly as requested
       py: 6,
-      backgroundColor: "#fff"
+      backgroundColor: "#fff",
+      maxWidth:'1700px',
+      margin:'0 auto',
     }}>
       <Box
         display="flex"

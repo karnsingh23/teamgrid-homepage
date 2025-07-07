@@ -275,6 +275,7 @@ function Navbar() {
                           alignItems: "center",
                           justifyContent: "center",
                           px: 12,
+                          
                         }}
                       >
                         <Paper
@@ -286,6 +287,7 @@ function Navbar() {
                             boxShadow: 3,
                             width: "90vw",
                             backgroundColor: "background.paper",
+                            maxWidth:'1500px'
                           }}
                         >
                           <Grid
