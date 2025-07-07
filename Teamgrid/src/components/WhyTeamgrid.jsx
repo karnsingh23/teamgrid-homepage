@@ -84,7 +84,7 @@ const WhyTeamgrid = () => {
           <Button
             variant="outlined"
             sx={{
-              borderRadius: "50px",
+              borderRadius: "16px",
               textTransform: "none",
               fontSize: { xs: "15px", sm: "17px", md: "18px" },
               fontWeight:400,

@@ -45,17 +45,37 @@ const FooterSection = () => {
             <Typography variant="subtitle1" fontSize="20px" fontWeight={500} gutterBottom>
               Blogs
             </Typography>
-            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2} sx={{
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline",
+    },
+  }}>
               How AI Is Transforming Web & Mobile App Development in 2025
             </Link>
-            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2} sx={{
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline",
+    },
+  }}>
               Choosing the Right Tech Stack for Scalable Product Development
             </Link>
-            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2} sx={{
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline",
+    },
+  }}>
               Design Smarter: Why UI/UX Matters More Than Ever in AI-Powered
               Apps
             </Link>
-            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5">
+            <Link href="#" underline="none" fontSize="16px" color="#A8B6C5" sx={{
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline",
+    },
+  }}>
               Fixed-Cost vs. Dedicated Teams: What Works Best for Your Next
               Project?
             </Link>
@@ -82,9 +102,23 @@ const FooterSection = () => {
               "How We Work",
               "Let’s Talk",
             ].map((text, i) => (
-              <Link key={i} href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
-                {text}
-              </Link>
+              <Link
+  key={i}
+  href="#"
+  underline="none"
+  fontSize="16px"
+  color="#A8B6C5"
+  mb={2}
+  sx={{
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline",
+    },
+  }}
+>
+  {text}
+</Link>
+
             ))}
           </Box>
         </Grid>
@@ -109,9 +143,23 @@ const FooterSection = () => {
               "E-commerce",
               "WordPress & Shopify",
             ].map((text, i) => (
-              <Link key={i} href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
-                {text}
-              </Link>
+             <Link
+  key={i}
+  href="#"
+  underline="none"
+  fontSize="16px"
+  color="#A8B6C5"
+  mb={2}
+  sx={{
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline",
+    },
+  }}
+>
+  {text}
+</Link>
+
             ))}
           </Box>
         </Grid>
@@ -133,9 +181,23 @@ const FooterSection = () => {
               "Privacy Policy",
               "NDA Available on Request",
             ].map((text, i) => (
-              <Link key={i} href="#" underline="none" fontSize="16px" color="#A8B6C5" mb={2}>
-                {text}
-              </Link>
+             <Link
+  key={i}
+  href="#"
+  underline="none"
+  fontSize="16px"
+  color="#A8B6C5"
+  mb={2}
+  sx={{
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline",
+    },
+  }}
+>
+  {text}
+</Link>
+
             ))}
           </Box>
         </Grid>
@@ -199,7 +261,7 @@ const FooterSection = () => {
                     ),
                     sx: {
                       bgcolor: "#1b3c5e",
-                      borderRadius: 999,
+                      borderRadius: '12px',
                       color: "white",
                       px: 2,
                     },

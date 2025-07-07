@@ -82,6 +82,26 @@ const tools = [
     info: "Next.js is a React framework for server-side rendering.",
     icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png",
   },
+  {
+    name: "Figma",
+    info: "Figma is a collaborative design tool for UI and UX.",
+    icon: figma,
+  },
+  {
+    name: "Bootstrap",
+    info: "Bootstrap is a CSS framework for responsive design.",
+    icon: bootstrap,
+  },
+  {
+    name: "React",
+    info: "React is a JavaScript library for building UI.",
+    icon: react,
+  },
+  {
+    name: "Material UI",
+    info: "Material UI is a React UI framework based on Google's Material Design.",
+    icon: mui,
+  },
 ];
 
 const orbitTriplets = [
@@ -408,9 +428,9 @@ const Animated = () => {
                     sx={{
                       backgroundColor: "#0070FF",
                       color: "white",
-                      px: 9,
+                      px: 4,
                       py: 1.5,
-                      borderRadius: "999px",
+                      borderRadius: "16px",
                       fontSize: "1rem",
                       fontWeight: 400,
                       textTransform: "none",
@@ -430,7 +450,7 @@ const Animated = () => {
                       color: "white",
                       px: 4,
                       py: 1.5,
-                      borderRadius: "999px",
+                      borderRadius: "16px",
                       bgcolor: "#072449",
                       fontSize: "1rem",
                       fontWeight: 400,
@@ -508,7 +528,7 @@ const Animated = () => {
         opacity: 0.4;
       }
       100% {
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(2);
         opacity: 0;
       }
     }
@@ -521,12 +541,12 @@ const Animated = () => {
                       position: "absolute",
                       top: "50%",
                       left: "50%",
-                      width: { xs: 120, md: 340, lg: 350 },
-                      height: { xs: 120, md: 340, lg: 350 },
+                      width: { xs: 120, md: 210, lg: 250 },
+                      height: { xs: 120, md: 210, lg: 250 },
                       borderRadius: "50%",
                       backgroundColor: "#0A2B55",
                       transform: "translate(-50%, -50%) scale(1)",
-                      animation: "continuousRipple 4s infinite 0.5s",
+                      animation: "continuousRipple 4s infinite ",
                     }}
                   />
 
@@ -536,12 +556,12 @@ const Animated = () => {
                       position: "absolute",
                       top: "50%",
                       left: "50%",
-                      width: { xs: 120, md: 340, lg: 300 },
-                      height: { xs: 120, md: 340, lg: 300 },
+                      width: { xs: 120, md: 210, lg: 250 },
+                      height: { xs: 120, md: 210, lg: 250 },
                       borderRadius: "50%",
                       backgroundColor: "#0B3161",
                       transform: "translate(-50%, -50%) scale(1)",
-                      animation: "continuousRipple 4s infinite 1.5s",
+                      animation: "continuousRipple 4s infinite 1s",
                     }}
                   />
 
@@ -551,12 +571,25 @@ const Animated = () => {
                       position: "absolute",
                       top: "50%",
                       left: "50%",
-                      width: { xs: 120, md: 340, lg: 250 },
-                      height: { xs: 120, md: 340, lg: 250 },
+                      width: { xs: 120, md: 210, lg: 250 },
+                      height: { xs: 120, md: 210, lg: 250 },
                       borderRadius: "50%",
                       backgroundColor: "#0D3A72",
                       transform: "translate(-50%, -50%) scale(1)",
-                      animation: "continuousRipple 4s infinite 2.5s",
+                      animation: "continuousRipple 4s infinite 2s",
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      width: { xs: 120, md: 210, lg: 250 },
+                      height: { xs: 120, md: 210, lg: 250 },
+                      borderRadius: "50%",
+                      backgroundColor: "#0D3A72",
+                      transform: "translate(-50%, -50%) scale(1)",
+                      animation: "continuousRipple 4s infinite 3s",
                     }}
                   />
 

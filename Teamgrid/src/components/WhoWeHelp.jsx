@@ -79,7 +79,7 @@ const WhoWeHelp = () => {
               fontSize: { xs: "15px", sm: "17px", md: "18px" },
               fontWeight: 400,
               color:'#FAFAFA',
-              borderRadius: "50px",
+              borderRadius: "16px",
               backgroundColor: "#05408E",
               textTransform: "none",
               px: { xs: 3, sm: 3.5, md: 4 },

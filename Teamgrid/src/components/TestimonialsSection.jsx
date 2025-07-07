@@ -156,7 +156,7 @@ const TestimonialsSection = () => {
           sx={{
             px: 4,
             py: 1.5,
-            borderRadius: 999,
+            borderRadius:'16px',
             borderColor: "#CACACA",
             fontSize: { xs: "14px", sm: "16px",md:"18px" },
             fontWeight:400,

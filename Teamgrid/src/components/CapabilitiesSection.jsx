@@ -111,7 +111,7 @@ const CapabilitiesSection = () => {
           m: { xs: "0 auto", md: 0 },
           px: { xs: 3, sm: 4,md:5 },
           py: 1.5,
-          borderRadius: "50px",
+          borderRadius: "16px",
           textTransform: "none",
           fontSize: { xs: "14px", sm: "16px" },
           fontWeight:400,

@@ -19,7 +19,7 @@ import {
   Divider,
   Drawer,
 } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -40,6 +40,7 @@ import img11 from "../assets/i11.png";
 
 function Navbar() {
   const theme = useTheme();
+  const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
 
@@ -79,6 +80,7 @@ function Navbar() {
         {
           name: "Front-End Development",
           icon: img1,
+          path: "front-end-development",
           desc: "Fast, responsive, and pixel-perfect user interfaces.",
         },
         {
@@ -201,16 +203,17 @@ function Navbar() {
               {/* Desktop Nav */}
               {!isMobile && (
                 <>
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ display: "flex", alignItems: "center",gap:2 }}>
                     <Button
                       sx={{
                         color: scrolled?"#0B3C7B": "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
-                        borderRadius: "47px",
+                        borderRadius: "12px",
                         "&:hover": { bgcolor: "#3082EC3B" },
                       }}
+                      onClick={()=>navigate('/')}
                     >
                       Home
                     </Button>
@@ -220,7 +223,7 @@ function Navbar() {
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
-                        borderRadius: "47px",
+                        borderRadius: "12px",
                         "&:hover": { bgcolor: "#3082EC3B" },
                       }}
                     >
@@ -234,7 +237,7 @@ function Navbar() {
                       <Button
                         sx={{
                           textTransform: "none",
-                          borderRadius: "47px",
+                          borderRadius: "12px",
                           fontSize: "16px",
                           px: 2,
                           gap: 1,
@@ -310,12 +313,16 @@ function Navbar() {
                                       mb: 1,
                                       borderRadius: 2,
                                       "&:hover": {
+                                        cursor:'pointer',
                                         backgroundColor: "#F3F3F6",
                                         "& .icons":{
                                           bgcolor:'#fff'
                                         }
                                       },
+                                      
                                     }}
+                                    onClick={() => {navigate(`${service.path}`)
+                                                    handlePopoverClose()}}
                                   >
                                     <Box
                                     className="icons"
@@ -357,7 +364,7 @@ function Navbar() {
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
-                        borderRadius: "47px",
+                        borderRadius: "12px",
                         "&:hover": { bgcolor: "#3082EC3B" },
                       }}
                     >
@@ -369,7 +376,7 @@ function Navbar() {
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
-                        borderRadius: "47px",
+                        borderRadius: "12px",
                         "&:hover": { bgcolor: "#3082EC3B" },
                       }}
                     >
@@ -381,7 +388,7 @@ function Navbar() {
                     variant="contained"
                     sx={{
                       backgroundColor: "#05408E",
-                      borderRadius: "37px",
+                      borderRadius: "12px",
                       textTransform: "none",
                       color: "#fff",
                       px: { xs: 2, sm: 3, md: 3, lg: 4 },
@@ -399,7 +406,7 @@ function Navbar() {
               {isMobile && (
                 <>
                   <IconButton onClick={toggleDrawer} edge="end">
-                    <MenuIcon sx={{ color: "#fff" }} />
+                    <MenuIcon sx={{ color: scrolled?"#0B3C7B": "#fff" }} />
                   </IconButton>
                   <Drawer
                     anchor="right"
@@ -488,7 +495,10 @@ function Navbar() {
                                       borderRadius: 1,
                                     },
                                   }}
-                                  onClick={toggleDrawer}
+                                  onClick={() => {
+    navigate(`${service.path}`);
+    toggleDrawer(); // close drawer after nav
+  }}
                                 >
                                   <Box
                                     component="img"
