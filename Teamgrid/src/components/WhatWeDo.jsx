@@ -84,7 +84,7 @@ const WhatWeDo = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 12 },
+        px: { xs: 2, sm: 3, lg: 12 },
         py: { xs: 6, md: 2 },
         bgcolor: "#fff",
         maxWidth: "1700px",

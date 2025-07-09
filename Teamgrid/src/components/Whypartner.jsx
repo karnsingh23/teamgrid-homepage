@@ -54,7 +54,7 @@ const WhyPartner = () => {
 
   return (
     <Box sx={{ 
-      px: { xs: 2, md: 12 }, // Exactly as requested
+      px: { xs: 2,sm:3 ,lg: 12 }, 
       py: 6,
       backgroundColor: "#fff",
       maxWidth:'1700px',
@@ -110,19 +110,20 @@ const WhyPartner = () => {
             sx={{
               display: 'flex',
               // justifyContent: 'center'
+              width:{xs:'100%',md:'32%'}
             }}
           >
             <Paper
               elevation={0}
               sx={{
                 backgroundColor: card.bgColor,
-                width: { xs: "100%", sm: "100%", md: "100%", lg: "395px", xl: "425px" },
+                width: { xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" },
                 height: { xs: "auto", md: "242px" },
                 p: { xs: 2, md: "24px" },
                 borderRadius: "24px",
                 display: "flex",
                 flexDirection: "column",
-                maxWidth: '450px'
+                // maxWidth: '450px'
               }}
             >
               <Box

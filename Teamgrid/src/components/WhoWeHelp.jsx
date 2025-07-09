@@ -26,15 +26,15 @@ const WhoWeHelp = () => {
         margin: "0 auto",
         alignItems: "center",
         justifyContent: "center",
-        px: { xs: 2, md: 12 },
         py: { xs: 5, md: 10 },
         overflow: "hidden",
+        px: { xs: 2, sm: 3,lg: 12 },
       }}
     >
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xs: "column",sm:'column', md: "row",lg:'row' },
           alignItems: "center",
           justifyContent: "space-between",
           gap: 6,
@@ -46,7 +46,7 @@ const WhoWeHelp = () => {
                                             {/* LEFT TEXT SECTION */}
 
 
-        <Box sx={{ maxWidth: 500 }}>
+        <Box sx={{ maxWidth: {md:450,lg:500} }}>
           <Typography
             fontSize={{ xs: "28px", sm: "34px", md: "40px",lg:'56px' }}
             fontWeight={500}

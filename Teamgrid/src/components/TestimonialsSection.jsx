@@ -162,6 +162,12 @@ const TestimonialsSection = () => {
             fontWeight:400,
             textTransform: "none",
             color: "#140E13",
+            transition:'all 0.3s ease-in-out',
+              "&:hover":{
+                backgroundColor:'#05408E',
+                borderColor:'#05408E',
+                color:'#fff',
+              }
           }}
         >
           Explore Testimonials →

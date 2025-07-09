@@ -20,6 +20,7 @@ import {
   Drawer,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -152,6 +153,16 @@ function Navbar() {
     },
   ];
 
+  const location = useLocation();
+
+  const allServicePaths = serviceCategories.flatMap((category) =>
+    category.services.map((service) => `/${service.path}`)
+  );
+
+  const isServicePage = allServicePaths.includes(location.pathname);
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <>
       <Box sx={{ width: "100%", bgcolor: "#072449" }}>
@@ -167,7 +178,7 @@ function Navbar() {
             position="fixed"
             elevation={0}
             sx={{
-              width: "100%", // full screen
+              width: "100%",
               background: scrolled
                 ? "#fff"
                 : "linear-gradient(to bottom, #000E1F,#05234A00)",
@@ -181,16 +192,16 @@ function Navbar() {
               sx={{
                 maxWidth: "1700px",
                 width: "100%",
-                mx: "auto", // center horizontally
+                mx: "auto", 
                 justifyContent: "space-between",
                 alignItems: "center",
                 minHeight: { xs: "60px", md: "80px" },
-                px: { xs: 2, md: 12 }, // padding inside
+                px: { xs: 2, sm: 3, lg: 12 }, 
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <img
-                  src={scrolled?darkLogo:Logo}
+                  src={scrolled ? darkLogo : Logo}
                   alt="Logo"
                   style={{
                     width: isMobile ? 130 : 160,
@@ -203,28 +214,31 @@ function Navbar() {
               {/* Desktop Nav */}
               {!isMobile && (
                 <>
-                  <Box sx={{ display: "flex", alignItems: "center",gap:2 }}>
+                  <Box sx={{ display: "flex", alignItems: "center", gap:{sm:0,md:0,lg:2} }}>
                     <Button
                       sx={{
-                        color: scrolled?"#0B3C7B": "#fff",
+                        color: scrolled ? "#0B3C7B" : "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
+                        backgroundColor: isActive("/")
+                          ? scrolled?"#F3F3F6":"#3082EC3B"
+                          : "transparent",
                         borderRadius: "12px",
-                        "&:hover": { bgcolor: "#3082EC3B" },
+                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B"},
                       }}
-                      onClick={()=>navigate('/')}
+                      onClick={() => navigate("/")}
                     >
                       Home
                     </Button>
                     <Button
                       sx={{
-                        color: scrolled?"#0B3C7B": "#fff",
+                        color: scrolled ? "#0B3C7B" : "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
                         borderRadius: "12px",
-                        "&:hover": { bgcolor: "#3082EC3B" },
+                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B" },
                       }}
                     >
                       About us
@@ -241,9 +255,12 @@ function Navbar() {
                           fontSize: "16px",
                           px: 2,
                           gap: 1,
-                          color: scrolled?"#0B3C7B": "#fff",
+                          color: scrolled ? "#0B3C7B" : "#fff",
                           fontWeight: "medium",
-                          "&:hover": { bgcolor: "#3082EC3B" },
+                          backgroundColor: isServicePage
+                            ? scrolled?"#F3F3F6" :"#3082EC3B"
+                            : "transparent",
+                          "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B" },
                         }}
                       >
                         What We Do
@@ -275,7 +292,6 @@ function Navbar() {
                           alignItems: "center",
                           justifyContent: "center",
                           px: 12,
-                          
                         }}
                       >
                         <Paper
@@ -283,11 +299,11 @@ function Navbar() {
                           onMouseLeave={handlePopoverClose}
                           sx={{
                             p: 3,
-                            borderRadius: '24px',
+                            borderRadius: "24px",
                             boxShadow: 3,
                             width: "90vw",
                             backgroundColor: "background.paper",
-                            maxWidth:'1500px'
+                            maxWidth: "1500px",
                           }}
                         >
                           <Grid
@@ -315,24 +331,32 @@ function Navbar() {
                                       mb: 1,
                                       borderRadius: 2,
                                       "&:hover": {
-                                        cursor:'pointer',
+                                        cursor: "pointer",
                                         backgroundColor: "#F3F3F6",
-                                        "& .icons":{
-                                          bgcolor:'#fff'
-                                        }
+                                        "& .icons": {
+                                          bgcolor: "#fff",
+                                        },
                                       },
-                                      
                                     }}
-                                    onClick={() => {navigate(`${service.path}`)
-                                                    handlePopoverClose()}}
+                                    onClick={() => {
+                                      navigate(`/${service.path}`);
+                                      handlePopoverClose();
+                                    }}
                                   >
                                     <Box
-                                    className="icons"
+                                      className="icons"
                                       component="img"
                                       src={service.icon}
                                       alt={service.name}
-                                      sx={{ width: 37, height: 40, mr: 2, p:1, borderRadius:'8px',color:'#05408E'}}
-                                      bgcolor='#F3F3F6'
+                                      sx={{
+                                        width: 37,
+                                        height: 40,
+                                        mr: 2,
+                                        p: 1,
+                                        borderRadius: "8px",
+                                        color: "#05408E",
+                                      }}
+                                      bgcolor="#F3F3F6"
                                     />
                                     <Box>
                                       <Typography
@@ -362,24 +386,24 @@ function Navbar() {
 
                     <Button
                       sx={{
-                        color: scrolled?"#0B3C7B": "#fff",
+                        color: scrolled ? "#0B3C7B" : "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
                         borderRadius: "12px",
-                        "&:hover": { bgcolor: "#3082EC3B" },
+                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B"},
                       }}
                     >
                       Technologies We Use
                     </Button>
                     <Button
                       sx={{
-                        color: scrolled?"#0B3C7B": "#fff",
+                        color: scrolled ? "#0B3C7B" : "#fff",
                         textTransform: "none",
                         fontSize: "16px",
                         px: 2,
                         borderRadius: "12px",
-                        "&:hover": { bgcolor: "#3082EC3B" },
+                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B" },
                       }}
                     >
                       How we work
@@ -408,7 +432,7 @@ function Navbar() {
               {isMobile && (
                 <>
                   <IconButton onClick={toggleDrawer} edge="end">
-                    <MenuIcon sx={{ color: scrolled?"#0B3C7B": "#fff" }} />
+                    <MenuIcon sx={{ color: scrolled ? "#0B3C7B" : "#fff" }} />
                   </IconButton>
                   <Drawer
                     anchor="right"
@@ -498,9 +522,9 @@ function Navbar() {
                                     },
                                   }}
                                   onClick={() => {
-    navigate(`${service.path}`);
-    toggleDrawer(); // close drawer after nav
-  }}
+                                    navigate(`${service.path}`);
+                                    toggleDrawer(); // close drawer after nav
+                                  }}
                                 >
                                   <Box
                                     component="img"

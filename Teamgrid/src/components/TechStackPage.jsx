@@ -34,7 +34,7 @@ const TechStackPage = () => {
   const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ px: { xs: 2, md: 12 }, py: { xs: 5, md: 8 },maxWidth:'1700px',m:'0 auto' }}>
+    <Box sx={{ px: { xs: 2,sm:3 ,lg: 12 }, py: { xs: 5, md: 8 },maxWidth:'1700px',m:'0 auto' }}>
       <Box
         sx={{
           display: 'flex',
@@ -47,7 +47,7 @@ const TechStackPage = () => {
         {/* Left side - Image */}
         <Box sx={{ 
           position: 'relative',
-          width: { xs: '100%', md: '588px' },
+          width: { xs: '100%',sm:'400px', lg: '588px' },
           flexShrink: 0
         }}>
           <Box
@@ -55,10 +55,10 @@ const TechStackPage = () => {
             src={image}
             alt="Team Working"
             sx={{
-              width: isMobile ? '100%' : '486px',
-          minWidth: isMobile ? 'unset' : '486px',
+              width: {xs:'100%',sm:'400px',lg:'486px'},
+          minWidth: {sm:'400px',lg:'486px'},
               height: isMobile ? 'auto' : '591px',
-              maxHeight: isSmallMobile ? '300px' : '400px',
+              maxHeight: isSmallMobile ? '300px' : '591px',
               borderRadius: 4,
               objectFit: 'cover',
             }}

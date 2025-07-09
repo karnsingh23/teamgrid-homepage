@@ -44,7 +44,7 @@ const WhyTeamgrid = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 12 },
+        px: { xs: 2, sm: 3, lg: 12 },
         py: { xs: 6, md: 10 },
         bgcolor: "#fff",
         maxWidth: "1700px",
@@ -95,6 +95,12 @@ const WhyTeamgrid = () => {
               minHeight: "52px",
               borderColor: "#000",
               mt: { xs: 2, md: 0 },
+              transition:'all 0.3s ease-in-out',
+              "&:hover":{
+                backgroundColor:'#05408E',
+                borderColor:'#05408E',
+                color:'#fff',
+              }
             }}
           >
             Explore Services →
@@ -162,7 +168,7 @@ const WhyTeamgrid = () => {
                 >
                   <ListItemIcon sx={{ minWidth: 32, mt: 2, mr: 1 }}>
                     <Box
-                      component="icons"
+                      // component="icons"
                       // src={tickSign}
                       alt="tick"
                       sx={{

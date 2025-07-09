@@ -43,7 +43,7 @@ const FAQ = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, sm: 4 },
+        px: { xs: 2, sm: 3 },
         py: { xs: 4, sm: 8 },
         backgroundColor: '#F3F8FF',
         textAlign: 'center',
@@ -87,13 +87,13 @@ const FAQ = () => {
           >
             <AccordionSummary
               expandIcon={
-                <IconButton>
-                  {expanded === index ? (
+              
+                  expanded === index ? (
                     <RemoveIcon sx={{ color: '#0048B1' }} />
                   ) : (
                     <AddIcon sx={{ color: '#0048B1' }} />
-                  )}
-                </IconButton>
+                  )
+                
               }
               sx={{
                 px: { xs: 2, sm: 3 },

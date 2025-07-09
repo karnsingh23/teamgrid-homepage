@@ -45,14 +45,14 @@ const steps = [
 const StepCard = ({ id, title, description }) => (
   <Box
     sx={{
-      width: '384px',
+      width: {xs:'100%',sm:'100%',md:'330px',xl:'384px'},
       height: '160px',
       backgroundColor: '#005DD5',
       borderRadius: '24px',
       p: 2,
       position: 'relative',
       color: 'white',
-      pl: 10,
+      pl: {sm:6,xl:10},
       flexShrink: 0,
       '@media (max-width: 420px)': {
         width: '100%',
@@ -64,8 +64,8 @@ const StepCard = ({ id, title, description }) => (
   >
     <Box
       sx={{
-        width: '80px',
-        height: '80px',
+        width: {xs:'60px',xl:'80px'},
+        height: {xs:'60px',xl:'80px'},
         backgroundColor: '#30ECAD',
         borderRadius: '24px',
         position: 'absolute',
@@ -75,7 +75,7 @@ const StepCard = ({ id, title, description }) => (
         alignItems: 'center',
         justifyContent: 'center',
         fontWeight: '300',
-        fontSize: '40px',
+        fontSize: {xs:'30px',xl:'40px'},
         color: '#089767',
         '@media (max-width: 420px)': {
           width: 60,
@@ -87,10 +87,10 @@ const StepCard = ({ id, title, description }) => (
       {id}
     </Box>
 
-    <Typography fontSize={{ xs: '18px', md: '20px' }} fontWeight={500} sx={{ mb: 1, mt: 1.5 }}>
+    <Typography fontSize={{ xs: '18px', xl: '20px' }} fontWeight={500} sx={{ mb: 1, mt: 1 }}>
       {title}
     </Typography>
-    <Typography fontSize={{ xs: '14px', md: '16px' }} fontWeight={400} color='#B2D2FC'>
+    <Typography fontSize={{ xs: '14px', xl: '16px' }} fontWeight={400} color='#B2D2FC'>
       {description}
     </Typography>
   </Box>
@@ -98,7 +98,7 @@ const StepCard = ({ id, title, description }) => (
 
 const HowWeWork = () => {
   return (
-    <Box sx={{ px: { xs: 0, md: 12 }, py: 6 ,maxWidth:'1700px',m:'0 auto'}}>
+    <Box sx={{ px: { xs: 2,sm:3 ,lg: 12 }, py: 6 ,maxWidth:'1700px',m:'0 auto'}}>
   <Box
     sx={{
       backgroundColor: '#0B3C7B',
@@ -109,9 +109,9 @@ const HowWeWork = () => {
       alignItems: 'center',
       color: 'white',
       width: '100%',
-      maxWidth: '100vw', // make it full width on large screens
-      mx: 'auto',         // center it horizontally
-      overflowX: 'hidden', // in case something overflows
+      maxWidth: '100vw', 
+      mx: 'auto',         
+      overflowX: 'hidden',
     }}
   >
     <Typography
@@ -158,12 +158,12 @@ const HowWeWork = () => {
             }}
           >
             <StepCard {...steps[0]} />
-            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-              <HiArrowLongRight fontSize={80} color='#30ECAD' />
+            <Box sx={{ display: { xs: 'none', md: 'block' },fontSize:{sm:40,lg:80} }}>
+              <HiArrowLongRight  color='#30ECAD' />
             </Box>
             <StepCard {...steps[1]} />
-            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-              <PiArrowBendRightDownLight fontSize={80} color='#30ECAD' />
+            <Box sx={{ display: { xs: 'none', md: 'block' },fontSize:{sm:40,lg:80} }}>
+              <PiArrowBendRightDownLight color='#30ECAD' />
             </Box>
           </Box>
 
@@ -173,7 +173,7 @@ const HowWeWork = () => {
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
               alignItems: 'center',
-              justifyContent: { xs: 'center', md: 'flex-end' },
+              justifyContent: { xs: 'center', lg: 'flex-end' },
               gap: 5,
               mb: 2,
               pl: { md: 10 },
@@ -181,12 +181,12 @@ const HowWeWork = () => {
               width: '100%',
             }}
           >
-            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-              <PiArrowBendLeftDownLight fontSize={80} color='#30ECAD' />
+            <Box sx={{ display: { xs: 'none', md: 'block' },fontSize:{sm:40,lg:80} }}>
+              <PiArrowBendLeftDownLight color='#30ECAD' />
             </Box>
             <StepCard {...steps[2]} />
-            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-              <HiArrowLongLeft fontSize={80} color='#30ECAD' />
+            <Box sx={{ display: { xs: 'none', md: 'block' },fontSize:{sm:40,lg:80} }}>
+              <HiArrowLongLeft color='#30ECAD' />
             </Box>
             <StepCard {...steps[3]} />
           </Box>
@@ -203,8 +203,8 @@ const HowWeWork = () => {
             }}
           >
             <StepCard {...steps[4]} />
-            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-              <HiArrowLongRight fontSize={80} color='#30ECAD' />
+            <Box sx={{ display: { xs: 'none', md: 'block' },fontSize:{sm:40,lg:80} }}>
+              <HiArrowLongRight color='#30ECAD' />
             </Box>
             <StepCard {...steps[5]} />
           </Box>

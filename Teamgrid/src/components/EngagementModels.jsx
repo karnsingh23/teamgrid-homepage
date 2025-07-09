@@ -45,7 +45,7 @@ const EngagementModels = () => {
 
   return (
     <Box sx={{ 
-      px: { xs: 2, md: 12}, 
+      px: { xs: 2,sm:3 ,lg: 12 }, 
       py: 8, 
       backgroundColor: "#fff",
       maxWidth: '1700px',
@@ -102,11 +102,12 @@ const EngagementModels = () => {
       {/* Cards Section */}
       <Grid 
         container 
-        spacing={4}
+        // spacing={4}
         sx={{
           // maxWidth: '1200px',
           mx: 'auto',
-          justifyContent: 'center'
+          gap:2,
+          justifyContent: 'space-between'
         }}
       >
         {cardData.map((card, index) => (
@@ -114,11 +115,13 @@ const EngagementModels = () => {
             item 
             xs={12} 
             sm={6} 
-            md={4} 
+            lg={4} 
             key={index}
             sx={{
               display: 'flex',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              width:{xs:'100%',md:'31%',lg:'31.5%'},
+            
             }}
           >
             <Paper
@@ -127,7 +130,7 @@ const EngagementModels = () => {
                 p: { xs: 2, sm: 3 },
                 borderRadius: "24px",
                 backgroundColor: "#F3F3F6",
-                width: { xs: "100%", sm: "100%", md: "100%", lg: "390px", xl: "420px" },
+                width: '100%',
                 height: { xs: "auto", md: "322px" },
                 display: "flex",
                 flexDirection: "column",
@@ -137,7 +140,7 @@ const EngagementModels = () => {
             >
               <Box>
                 <Typography
-                  fontSize={{ xs: "18px", md: "24px" }}
+                  fontSize={{ xs: "18px", md:'20px', lg: "24px" }}
                   fontWeight="500"
                   color="#05408E"
                   gutterBottom
@@ -155,7 +158,7 @@ const EngagementModels = () => {
                       <IoCheckmarkDoneSharp color="#3BB226" fontSize="20px" />
                       <Typography
                         color="#140E13"
-                        fontSize={{ xs: "14px", md: "16px" }}
+                        fontSize={{ xs: "14px",md:'15px', lg: "16px" }}
                         fontWeight={400}
                         px={1}
                       >
@@ -169,8 +172,8 @@ const EngagementModels = () => {
               {/* Buttons */}
               <Stack
                 direction="row"
-                spacing={2}
-                sx={{ mt: "auto", flexWrap: "wrap" }}
+                // spacing={2}
+                sx={{ mt: "auto", flexWrap: "wrap",gap:2 }}
               >
                 <Button
                   variant="contained"
@@ -179,11 +182,11 @@ const EngagementModels = () => {
                     textTransform: "none",
                     backgroundColor: "#05408E",
                     borderRadius: "12px",
-                    fontSize: { xs: "14px", md: "16px" },
+                    fontSize: { xs: "14px", lg: "16px" },
                     width: { xs: "100%", sm: "auto" },
-                    height: "48px",
+                    height:{xs:'auto',lg:"48px"}, 
                     fontWeight: 400,
-                    px: 2.5,
+                    px: {sm:1,lg:2.5},
                     "&:hover": {
                       backgroundColor: "#003f9e",
                     },
@@ -196,10 +199,10 @@ const EngagementModels = () => {
                   sx={{
                     textTransform: "none",
                     borderRadius: "12px",
-                    px: 2.5,
-                    fontSize: { xs: "14px", md: "16px" },
+                    px: {sm:1,lg:2.5},
+                    fontSize: { xs: "14px", lg: "16px" },
                     width: { xs: "100%", sm: "auto" },
-                    height: "48px",
+                     height:{xs:'auto',lg:"48px"}, 
                     fontWeight: 400,
                     color: "#140E13",
                     borderColor: "#D7D7D7",

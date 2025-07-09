@@ -70,7 +70,7 @@ const CapabilitiesSection = () => {
     <Box sx={{ width: "100%", bgcolor: "#0c3b74", color: "white" }}>
   <Box
     sx={{
-      px: { xs: 2, md: 12 },
+     px: { xs: 2, sm: 3, lg: 12 },
       py: { xs: 6, md: 10 },
       maxWidth: "1700px",
       margin: "0 auto",
@@ -124,7 +124,7 @@ const CapabilitiesSection = () => {
     </Box>
 
     {/* Grid of Capabilities */}
-    <Grid container spacing={3} justifyContent="space-between">
+    <Grid container spacing={3} sx={{justifyContent:{sm:'center',lg:'space-between'}}}>
       {capabilities.map((cap, index) => (
         <Grid
           key={index}
@@ -141,7 +141,7 @@ const CapabilitiesSection = () => {
               height: "100%",
               borderRadius: "24px",
               width: "100%",
-              maxWidth: { xs: 320, sm: 360, md: 370, lg: 390 },
+              maxWidth: { xs: 320, sm: 330, md: 350, lg: 370,xl:390 },
               border: "1px solid rgb(7, 82, 161)",
               m: "0 auto",
               "&:hover": {
@@ -164,7 +164,7 @@ const CapabilitiesSection = () => {
                   display: "flex",
                   // alignItems: "center",
                   justifyContent: "center",
-                  mr: 2,
+                  mr:2,
                   bgcolor: "#1B5093",
                   p: 1,
                   borderRadius: 4,

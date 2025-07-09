@@ -252,7 +252,7 @@ const Animated = () => {
 
           return (
             <Box
-              key={tool.name}
+              // key={tool.name}
               sx={{
                 position: "absolute",
                 top: `calc(50% + ${y}px)`,
@@ -340,20 +340,20 @@ const Animated = () => {
             maxWidth: "1700px",
             margin: "0 auto",
             position: "relative",
-            overflow: "hidden",
+            // overflow: "hidden",
+            pl: { xs: 2, sm: 3, lg: 12 },
           }}
         >
           <Box
             sx={{
               position: "relative",
-               maxHeight:'800px',
+              maxHeight:'800px',
               width: "100%",
               height: "100vh",
               overflow: "hidden",
+            
             }}
           >
-            {/* from here the animation is starting */}
-
             <Box
               sx={{
                 position: "absolute",
@@ -382,7 +382,7 @@ const Animated = () => {
                 sx={{
                   maxHeight:'800px',
                   position: "relative",
-                  left: { xs: 0, md: "100px" },
+                  // left: { xs: 0, md: "100px" },
                   maxWidth: { xs: "90%", md: 750, lg: 850 },
                   color: "white",
                   mt: "80px",
