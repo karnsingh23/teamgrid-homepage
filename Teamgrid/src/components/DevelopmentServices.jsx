@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import fullstackicon from "../assets/wordpress3.svg";
-import frontendicon from "../assets/wordPress5.svg";
+import frontendicon from "../assets/wordpress5.svg";
 import backendicon from "../assets/wordpress4.svg";
 import wordpressicon from "../assets/wordpress2.svg";
 import ReactIcon from '../assets/Group.png';
