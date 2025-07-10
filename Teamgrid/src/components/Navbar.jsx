@@ -92,6 +92,7 @@ function Navbar() {
         {
           name: "WordPress & CMS",
           icon: img3,
+          path: "teamgrid/wordpress",
           desc: "Custom WordPress sites with Elementor, and more.",
         },
       ],
@@ -192,11 +193,11 @@ function Navbar() {
               sx={{
                 maxWidth: "1700px",
                 width: "100%",
-                mx: "auto", 
+                mx: "auto",
                 justifyContent: "space-between",
                 alignItems: "center",
                 minHeight: { xs: "60px", md: "80px" },
-                px: { xs: 2, sm: 3, lg: 12 }, 
+                px: { xs: 2, sm: 3, lg: 12 },
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -214,7 +215,13 @@ function Navbar() {
               {/* Desktop Nav */}
               {!isMobile && (
                 <>
-                  <Box sx={{ display: "flex", alignItems: "center", gap:{sm:0,md:0,lg:2} }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: { sm: 0, md: 0, lg: 2 },
+                    }}
+                  >
                     <Button
                       sx={{
                         color: scrolled ? "#0B3C7B" : "#fff",
@@ -222,10 +229,14 @@ function Navbar() {
                         fontSize: "16px",
                         px: 2,
                         backgroundColor: isActive("/")
-                          ? scrolled?"#F3F3F6":"#3082EC3B"
+                          ? scrolled
+                            ? "#F3F3F6"
+                            : "#3082EC3B"
                           : "transparent",
                         borderRadius: "12px",
-                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B"},
+                        "&:hover": {
+                          bgcolor: scrolled ? "#F3F3F6" : "#3082EC3B",
+                        },
                       }}
                       onClick={() => navigate("/")}
                     >
@@ -238,7 +249,9 @@ function Navbar() {
                         fontSize: "16px",
                         px: 2,
                         borderRadius: "12px",
-                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B" },
+                        "&:hover": {
+                          bgcolor: scrolled ? "#F3F3F6" : "#3082EC3B",
+                        },
                       }}
                     >
                       About us
@@ -258,9 +271,13 @@ function Navbar() {
                           color: scrolled ? "#0B3C7B" : "#fff",
                           fontWeight: "medium",
                           backgroundColor: isServicePage
-                            ? scrolled?"#F3F3F6" :"#3082EC3B"
+                            ? scrolled
+                              ? "#F3F3F6"
+                              : "#3082EC3B"
                             : "transparent",
-                          "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B" },
+                          "&:hover": {
+                            bgcolor: scrolled ? "#F3F3F6" : "#3082EC3B",
+                          },
                         }}
                       >
                         What We Do
@@ -391,7 +408,9 @@ function Navbar() {
                         fontSize: "16px",
                         px: 2,
                         borderRadius: "12px",
-                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B"},
+                        "&:hover": {
+                          bgcolor: scrolled ? "#F3F3F6" : "#3082EC3B",
+                        },
                       }}
                     >
                       Technologies We Use
@@ -403,7 +422,9 @@ function Navbar() {
                         fontSize: "16px",
                         px: 2,
                         borderRadius: "12px",
-                        "&:hover": { bgcolor:scrolled?"#F3F3F6" :"#3082EC3B" },
+                        "&:hover": {
+                          bgcolor: scrolled ? "#F3F3F6" : "#3082EC3B",
+                        },
                       }}
                     >
                       How we work

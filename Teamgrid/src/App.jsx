@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import FooterSection from './components/FooterSection';
 import Frontend from './pages/Frontend'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Wordpress from './pages/Wordpress';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage/>}/>
           <Route path='front-end-development' element={  <Frontend/>}/>
+          <Route path='teamgrid/wordpress' element={ <Wordpress/>}/>
         </Routes>
         <FooterSection/>
       </Router>     

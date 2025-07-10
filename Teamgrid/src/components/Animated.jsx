@@ -340,7 +340,7 @@ const Animated = () => {
             maxWidth: "1700px",
             margin: "0 auto",
             position: "relative",
-            // overflow: "hidden",
+            overflow: "hidden",
             pl: { xs: 2, sm: 3, lg: 12 },
           }}
         >
@@ -664,7 +664,7 @@ const Animated = () => {
           {showModal && selectedTool && (
             <Box
               sx={{
-                position: "fixed",
+                position: "absolute",
                 top: "20%",
                 right: 0,
                 width: { xs: "100%", md: "400px" },
