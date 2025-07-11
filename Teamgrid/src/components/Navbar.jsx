@@ -186,7 +186,7 @@ function Navbar() {
               transition: "background-color 0.3s ease",
               color: "white",
               minHeight: { xs: "60px", md: "80px" },
-              zIndex: 10,
+              zIndex: 100000000,
             }}
           >
             <Toolbar
