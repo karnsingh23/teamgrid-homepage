@@ -125,10 +125,10 @@ const tools = [
 ];
 
 const orbitTriplets = [
-  [tools[0], tools[1], tools[2],tools[3],],
-  [ tools[4], tools[5] ,tools[6], tools[7],],
-  [ tools[8],tools[9], tools[10], tools[11],tools[12],tools[13],],
-  [ tools[14], tools[15],tools[16],tools[17],tools[18],tools[19],],
+  [tools[0], tools[1], tools[2], tools[3]],
+  [tools[4], tools[5], tools[6], tools[7]],
+  [tools[8], tools[9], tools[10], tools[11], tools[12], tools[13]],
+  [tools[14], tools[15], tools[16], tools[17], tools[18], tools[19]],
 ];
 
 const Animated = () => {
@@ -148,16 +148,6 @@ const Animated = () => {
       .map(() => Math.random() * 360)
   );
 
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     if (isHoveringOrbit) {
@@ -257,7 +247,6 @@ const Animated = () => {
                 position: "absolute",
                 top: `calc(50% + ${y}px)`,
                 left: `calc(50% + ${x}px)`,
-
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -291,16 +280,18 @@ const Animated = () => {
                   onClick={() => {
                     startTransition(() => {
                       setSelectedTool(tool);
-                      setLogoZoomed(true);
+                      if (!isMobile) {
+                        setLogoZoomed(true);
+                      }
                       // setLogoVisible(true);
                     });
 
                     setTimeout(() => {
                       startTransition(() => {
-                        setLogoVisible(false);
+                        // setLogoVisible(false);
                         setShowModal(true);
                       });
-                    }, 300);
+                    }, 500);
                   }}
                   sx={{
                     width: { xs: 24, md: 40 },
@@ -347,11 +338,10 @@ const Animated = () => {
           <Box
             sx={{
               position: "relative",
-              maxHeight:'800px',
+              maxHeight: "800px",
               width: "100%",
               height: "100vh",
               overflow: "hidden",
-            
             }}
           >
             <Box
@@ -380,7 +370,7 @@ const Animated = () => {
 
               <Box
                 sx={{
-                  maxHeight:'800px',
+                  maxHeight: "800px",
                   position: "relative",
                   // left: { xs: 0, md: "100px" },
                   maxWidth: { xs: "90%", md: 750, lg: 850 },
@@ -513,7 +503,7 @@ const Animated = () => {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    overflow:'visible'
+                    overflow: "visible",
                   }}
                 >
                   {orbitTriplets.map((triplet, index) =>
@@ -647,10 +637,10 @@ const Animated = () => {
                           : "translateX(50%) scale(1)", // Center normally
                         transformOrigin: "right center", // Zoom from right side
                         transition:
-                          "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                        zIndex: logoZoomed ? 1300 : 2,
-                        opacity: logoVisible ? 1 : 0,
-                        visibility: logoVisible ? "visible" : "hidden",
+                          "transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
+                        zIndex: logoZoomed ? 1500 : 2,
+                        // opacity: logoVisible ? 1 : 0,
+                        // visibility: logoVisible ? "visible" : "hidden",
                       }}
                     />
                   </Box>
@@ -661,7 +651,7 @@ const Animated = () => {
 
           {/* this is the modal which will popup after clicking on any icons */}
 
-          {showModal && selectedTool && (
+          {showModal && selectedTool && !isMobile && (
             <Box
               sx={{
                 position: "absolute",
@@ -669,11 +659,11 @@ const Animated = () => {
                 right: 0,
                 width: { xs: "100%", md: "400px" },
                 height: "80%",
-                backgroundColor: "#4293FC",
+                // backgroundColor: "transparent",
                 color: "#fff",
                 zIndex: 1400,
-                padding: { xs: 3, md: 4 },
-                boxShadow: "-4px 0 20px rgba(0,0,0,0.3)",
+                padding: { xs: 6, lg: 4 },
+                // boxShadow: "-4px 0 20px rgba(0,0,0,0.3)",
                 borderTopLeftRadius: "100px",
                 display: "flex",
                 flexDirection: "column",
