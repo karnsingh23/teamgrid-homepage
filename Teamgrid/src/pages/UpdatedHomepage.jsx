@@ -19,7 +19,7 @@ import {
 } from "@mui/material";
 import GroupsIcon from "@mui/icons-material/Groups";
 import Animated from "../components/Animated";
-import Timage from "../assets/Timage.svg";
+import Timage from "../assets/Timage.png";
 import Ai from "../assets/Ai.png";
 import ecommerce from "../assets/ecommerce.png";
 import mobile from "../assets/mobile.png";
