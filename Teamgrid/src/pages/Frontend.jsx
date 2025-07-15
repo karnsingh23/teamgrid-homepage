@@ -104,7 +104,38 @@ const services = [
 
 function Frontend() {
 
- 
+  const steps = [
+  {
+    id: '01',
+    title: 'Discovery & Requirements',
+    description: 'We define goals, user types, and key screens to ensure alignment before design or development begins.',
+  },
+  {
+    id: '02',
+    title: 'Design Handoff & Planning',
+    description: 'We review design files, clarify edge cases, and outline technical scope for smooth project execution.',
+  },
+  {
+    id: '03',
+    title: 'API Integration',
+    description: 'We connect front-end with backend or CMS APIs to handle real-time data and error states reliably.',
+  },
+  {
+    id: '04',
+    title: 'Development',
+    description: 'We build responsive, pixel-perfect interfaces using React and modern CSS with clean, scalable code.',
+  },
+  {
+    id: '05',
+    title: 'QA & Testing',
+    description: 'We test on all screen sizes, ensure WCAG compliance, and validate performance across major browsers.',
+  },
+  {
+    id: '06',
+    title: 'Deployment or Handover',
+    description: 'We deliver clean, version-controlled code or coordinate handoff to backend teams for integration.',
+  },
+];
 
   const scrollRef = useRef();
 
@@ -129,6 +160,44 @@ function Frontend() {
     btntwo: "Schedule a Call",
   };
 
+  const cardData = [
+    {
+      title: "Agency-Centric",
+      description:
+        "Specifically designed to support digital and creative agencies with reliable, scalable front-end development services.",
+      bgColor: "#FFF7C7",
+      iconbg: "#FDE658",
+    },
+    {
+      title: "Speed & Flexibility",
+      description:
+        "Kickstart projects quickly and scale up or down as your client demands change — no overhead, just results.",
+      bgColor: "#EAEAFF",
+      iconbg: "#DADAFD",
+    },
+    {
+      title: "UI-First Thinking",
+      description:
+        "Our developers prioritize design fidelity with responsive, pixel-perfect implementations that bring your mockups to life flawlessly.",
+      bgColor: "#E7FFD7",
+      iconbg: "#CDF5B3",
+    },
+    {
+      title: "NDA-Compliant",
+      description:
+        "We work under strict non-disclosure agreements, ensuring full confidentiality while representing your brand seamlessly.",
+      bgColor: "#FFEFFC",
+      iconbg: "#FFDDF9",
+    },
+    {
+      title: "Seamless Integration",
+      description:
+        "We collaborate smoothly with your in-house designers, backend developers, and project managers.",
+      bgColor: "#ECF9FF",
+      iconbg: "#CBEFFF",
+    },
+  ];
+
   return (
     <>
       <Banner/>
@@ -138,8 +207,9 @@ function Frontend() {
         <Box
           sx={{
             pl: { xs: 2, sm: 3, lg: 12 },
+            pr:{xs:2,md:0},
             py: { xs: 6, md: 0 },
-            mt:10,
+            mt:{xs:0,lg:10},
             overflowX: "hidden",
           }}
         >
@@ -155,7 +225,7 @@ function Frontend() {
             <Box
               sx={{
                 flex: 1,
-                mt: { xs: 4, md: 8 },
+                mt: { xs: 0, md: 8 },
                 minWidth: { sm: "400px", lg: "588px" },
                 width: { xs: "100%", md: "auto" },
                 maxWidth: "100%",
@@ -351,8 +421,22 @@ function Frontend() {
       </Box>
 
       <TechStackPage />
-      <WhyPartner />
-      <HowWeWork />
+      <WhyPartner 
+       cardData={cardData}
+       heading={"Why Partner With Us"}
+        />
+      <HowWeWork
+  steps={steps}
+  bgColor="#0B3C7B"
+  headingColor="#fff"
+  cardbgcolor="#005DD5"
+  numBoxbgcolor="#30ECAD"
+  idcolor="#089767"
+  titlecolor="#fff"
+  desccolor="#B2D2FC"
+  heading2color="#fff"
+  arrowColor="#30ECAD"
+/>
       <EngagementModels />
       <FAQ />
       <LetsTalk

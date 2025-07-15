@@ -3,8 +3,60 @@ import wordpress1 from "../assets/wordpress1.png";
 import { Box, Typography } from "@mui/material";
 import DevelopmentServices from "../components/DevelopmentServices";
 import WhyChooseUs from "../components/WhyChooseUs";
+import WhyPartner from "../components/Whypartner";
+
+
+import dedicatedicon from "../assets/wordpress6.svg"
+import ndaicon from "../assets/wordpress8.svg"
+import flexibleicon from "../assets/wordpress7.svg"
+import modularicon from "../assets/wordpress9.svg"
+import qualityicon from "../assets/wordpress10.svg"
 
 function Wordpress() {
+
+  const cardData = [
+    {
+      icon: dedicatedicon,
+      title: "Dedicated developers or full teams",
+      description:
+        "Get skilled individuals or complete teams tailored to your project needs.",
+         bgColor: "#FFF7C7",
+      iconbg: "#FDE658",
+    },
+    {
+      icon: ndaicon,
+      title: "NDA-compliant & agency-friendly",
+      description:
+        "We protect your privacy and work seamlessly under your brand.",
+          bgColor: "#EAEAFF",
+      iconbg: "#DADAFD",
+    },
+    {
+      icon: flexibleicon,
+      title: "Flexible engagement models",
+      description:
+        "Choose hourly, retainer, or project-based models that fit your workflow.",
+        bgColor: "#E7FFD7",
+      iconbg: "#CDF5B3",
+    },
+    {
+      icon: modularicon,
+      title: "Modular code with documentation",
+      description:
+        "We write scalable code that’s easy to maintain and well-documented.",
+        bgColor: "#FFEFFC",
+      iconbg: "#FFDDF9",
+    },
+    {
+      icon: qualityicon,
+      title: "Quality Assured. High Performance.",
+      description:
+        "Every solution is thoroughly tested for speed, stability, and reliability.",
+        bgColor: "#ECF9FF",
+      iconbg: "#CBEFFF",
+    },
+  ];
+
   return (
     <>
       <Banner />
@@ -68,7 +120,7 @@ function Wordpress() {
         />
       </Box>
       <DevelopmentServices/>
-      <WhyChooseUs/>
+      <WhyPartner cardData={cardData} heading={"Why Choose Teamgrid for Web Development?"}/>
     </>
   );
 }

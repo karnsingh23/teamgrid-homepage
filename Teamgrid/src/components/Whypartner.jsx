@@ -10,45 +10,9 @@ import {
 } from "@mui/material";
 import GroupsIcon from "@mui/icons-material/Groups";
 
-const cardData = [
-  {
-    title: "Agency-Centric",
-    description:
-      "Specifically designed to support digital and creative agencies with reliable, scalable front-end development services.",
-    bgColor: "#FFF7C7",
-    iconbg: "#FDE658",
-  },
-  {
-    title: "Speed & Flexibility",
-    description:
-      "Kickstart projects quickly and scale up or down as your client demands change — no overhead, just results.",
-    bgColor: "#EAEAFF",
-    iconbg: "#DADAFD",
-  },
-  {
-    title: "UI-First Thinking",
-    description:
-      "Our developers prioritize design fidelity with responsive, pixel-perfect implementations that bring your mockups to life flawlessly.",
-    bgColor: "#E7FFD7",
-    iconbg: "#CDF5B3",
-  },
-  {
-    title: "NDA-Compliant",
-    description:
-      "We work under strict non-disclosure agreements, ensuring full confidentiality while representing your brand seamlessly.",
-    bgColor: "#FFEFFC",
-    iconbg: "#FFDDF9",
-  },
-  {
-    title: "Seamless Integration",
-    description:
-      "We collaborate smoothly with your in-house designers, backend developers, and project managers.",
-    bgColor: "#ECF9FF",
-    iconbg: "#CBEFFF",
-  },
-];
 
-const WhyPartner = () => {
+
+const WhyPartner = ({cardData,heading}) => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -72,8 +36,9 @@ const WhyPartner = () => {
           fontSize={{ xs: 28, sm: 36, md: 48 }}
           fontWeight="500"
           lineHeight={1.2}
+          maxWidth={599}
         >
-          Why Partner With Us
+          {heading}
         </Typography>
         <Button
           variant="outlined"
