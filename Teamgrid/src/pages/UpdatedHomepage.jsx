@@ -27,15 +27,26 @@ import remote from "../assets/remote.png";
 import web from "../assets/web.jpg";
 import ui from "../assets/ui.jpg";
 import gimage from "../assets/gimage.png";
-
+import bgImage from '../assets/rectangle-25.png'
 import dedicatedicon from "../assets/wordpress6.svg";
 import ndaicon from "../assets/wordpress8.svg";
 import flexibleicon from "../assets/wordpress7.svg";
 import modularicon from "../assets/wordpress9.svg";
 import qualityicon from "../assets/wordpress10.svg";
 import HowWeWork from "../components/HowWeWork";
+import CapabilitiesSection from "../components/CapabilitiesSection";
+import TestimonialsSection from "../components/TestimonialsSection";
+import LetsTalk from "../components/Letstalk";
 
 function UpdatedHomepage() {
+
+   const data = {
+    title: `Let’s Build Together`,
+    paraone:'— Efficiently, Flexibly, and Reliably',
+    paratwo:`Whether you're scaling a team or shipping a project, Teamgrid is your partner in dependable delivery.`,
+    btnone:`Let’s Talk`,
+    btntwo:'Request a Free Quote'
+  }
   const steps = [
     {
       id: "01",
@@ -623,6 +634,10 @@ function UpdatedHomepage() {
         heading2color="#140E13"
         arrowColor="#05408E"
       />
+      <CapabilitiesSection/>
+      <TestimonialsSection/>
+      <LetsTalk bgImage={bgImage} title={data.title} paraone={data.paraone} paratwo={data.paratwo} btnone={data.btnone} btntwo={data.btntwo}/>
+  
     </>
   );
 }
