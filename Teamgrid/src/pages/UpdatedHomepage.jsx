@@ -27,7 +27,7 @@ import remote from "../assets/remote.png";
 import web from "../assets/web.jpg";
 import ui from "../assets/ui.jpg";
 import gimage from "../assets/gimage.png";
-import bgImage from '../assets/rectangle-25.png'
+import bgImage from "../assets/rectangle-25.png";
 import dedicatedicon from "../assets/wordpress6.svg";
 import ndaicon from "../assets/wordpress8.svg";
 import flexibleicon from "../assets/wordpress7.svg";
@@ -39,14 +39,13 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import LetsTalk from "../components/Letstalk";
 
 function UpdatedHomepage() {
-
-   const data = {
+  const data = {
     title: `Let’s Build Together`,
-    paraone:'— Efficiently, Flexibly, and Reliably',
-    paratwo:`Whether you're scaling a team or shipping a project, Teamgrid is your partner in dependable delivery.`,
-    btnone:`Let’s Talk`,
-    btntwo:'Request a Free Quote'
-  }
+    paraone: "— Efficiently, Flexibly, and Reliably",
+    paratwo: `Whether you're scaling a team or shipping a project, Teamgrid is your partner in dependable delivery.`,
+    btnone: `Let’s Talk`,
+    btntwo: "Request a Free Quote",
+  };
   const steps = [
     {
       id: "01",
@@ -192,6 +191,8 @@ function UpdatedHomepage() {
           width: "100%",
           px: { xs: 2, sm: 3, lg: 12 },
           py: { xs: 4, sm: 6, md: 8 },
+          maxWidth: "1700px",
+          m: "0 auto",
         }}
       >
         <Grid
@@ -290,7 +291,14 @@ function UpdatedHomepage() {
         </Grid>
       </Box>
 
-      <Box sx={{ px: { xs: 2, sm: 3, lg: 12 }, py: 4 }}>
+      <Box
+        sx={{
+          px: { xs: 2, sm: 3, lg: 12 },
+          py: 4,
+          maxWidth: "1700px",
+          m: "0 auto",
+        }}
+      >
         <Box
           sx={{
             width: "100%",
@@ -415,11 +423,13 @@ function UpdatedHomepage() {
         sx={{
           width: "100%",
           display: "flex",
-          flexDirection: { xs: "column", md: "row" }, // Stack on mobile, row on desktop
+          flexDirection: { xs: "column", md: "row" }, 
           alignItems: "center",
-          px: { xs: 2, sm: 3, md: 4, lg: 12 }, // Responsive padding
+          px: { xs: 2, sm: 3, md: 4, lg: 12 },
           py: 6,
-          gap: { xs: 4, md: 6 }, // Add gap between image and content
+          gap: { xs: 4, md: 6 }, 
+          maxWidth:'1700px',
+          m:'0 auto'
         }}
       >
         {/* Image Section */}
@@ -634,10 +644,16 @@ function UpdatedHomepage() {
         heading2color="#140E13"
         arrowColor="#05408E"
       />
-      <CapabilitiesSection/>
-      <TestimonialsSection/>
-      <LetsTalk bgImage={bgImage} title={data.title} paraone={data.paraone} paratwo={data.paratwo} btnone={data.btnone} btntwo={data.btntwo}/>
-  
+      <CapabilitiesSection />
+      <TestimonialsSection />
+      <LetsTalk
+        bgImage={bgImage}
+        title={data.title}
+        paraone={data.paraone}
+        paratwo={data.paratwo}
+        btnone={data.btnone}
+        btntwo={data.btntwo}
+      />
     </>
   );
 }
