@@ -39,7 +39,7 @@ import img9 from "../assets/i9.png";
 import img10 from "../assets/i10.png";
 import img11 from "../assets/i11.png";
 
-function Navbar() {
+function Navbar(props) {
   const theme = useTheme();
   const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -443,6 +443,7 @@ function Navbar() {
                       fontSize: { xs: 13, sm: 14, md: 14, lg: 16 },
                       "&:hover": { backgroundColor: "#0059C7" },
                     }}
+                    onClick={props.onLetsTalkClick}
                   >
                     Let's Talk
                   </Button>
@@ -607,7 +608,10 @@ function Navbar() {
                                 backgroundColor: "#0059C7",
                               },
                             }}
-                            onClick={toggleDrawer}
+                            onClick={() => {
+                              if (props.onLetsTalkClick) props.onLetsTalkClick();
+                              toggleDrawer();
+                            }}
                           >
                             Let's Talk
                           </Button>
